@@ -55,7 +55,7 @@ class Cp_Manager_Module extends Coffe_Module
 		$this->view->back_url = $this->_GET('back_url');
 
 		//добавление компонента на страницу
-		if (isset($this->view->data['pid'])){
+		if (isset($this->view->data['pid']) && $this->view->data['pid'] != '0'){
 			$page = $CPage->getById($this->view->data['pid'], '');
 			if (!$page){
 				$this->flash->pushError($this->lang('page_not_found'));
