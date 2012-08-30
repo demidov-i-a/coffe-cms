@@ -8,11 +8,13 @@
         <name id="ru">
             <label id="table_head_uid">ID</label>
             <label id="table_head_id">Компонент</label>
+            <label id="table_head_cp_group">Группа</label>
             <label id="table_head_template">Шаблон</label>
             <label id="table_head_title">Заголовок</label>
             <label id="table_head_content">Содержимое</label>
             <label id="table_head_hidden">Отключен</label>
             <label id="table_head_cache">Кеш</label>
+
 
             <label id="yes">Да</label>
             <label id="no">Нет</label>
@@ -36,6 +38,8 @@
             <label id="cp_tab_media">Медиа</label>
             <label id="cp_tab_plugin">Дополнения</label>
             <label id="cp_tab_other">Прочее</label>
+
+            <label id="save">Сохранить</label>
         </name>
     </data>
 </lang>

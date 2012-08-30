@@ -30,12 +30,30 @@ class Cp_Manager_Module extends Coffe_Module
 	public function indexAction()
 	{
 		$this->module_title = $this->lang('component_list');
+		if ($this->isPost()){
+			$groups = $this->_POST('cp_groups', false);
+			$this->updateGroupsPosition($groups);
+		}
 		$this->view->components = Coffe_CpManager::getRowsNoPage();
 		$this->module_menu[] = array(
 			'title' => $this->lang('new_component'),
 			'href' => $this->url(null, array('action' => 'addComponent','back_url' => $this->url()))
 		);
 		$this->render('index.phtml');
+	}
+
+	/**
+	 * Обновление групп компонентов
+	 *
+	 * @param $groups
+	 */
+	protected function updateGroupsPosition($groups)
+	{
+		if (is_array($groups)){
+			foreach($groups as $uid => $group){
+				$this->db->update('component',array('cp_group' => trim($group)), 'uid = ' . intval($uid));
+			}
+		}
 	}
 
 	/**
