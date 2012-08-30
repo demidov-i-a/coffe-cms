@@ -1,4 +1,6 @@
 coffe-cms
 =========
 
-The Coffe CMS project
+The Coffe CMS project.
+
+New CMS
