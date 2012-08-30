@@ -1,0 +1,13 @@
+<div class="coffe-form-block">
+	<div class="login-block coffe-background2">
+	<h1><?php echo $this->lang('status')?></h1>
+
+	<div class="element-wrapper">
+		<?php echo $this->lang('login')?>:  <b><?php echo $this->user['username']?></b>
+	</div>
+	<a href="<?php echo $this->url($this->module_id,array('logout' => '1'))?>">
+		<?php echo $this->lang('exit')?>
+	</a>&nbsp;
+	<a href="<?php echo $this->main_page_link ?>"><?php echo $this->lang('goto_site')?></a>
+	</div>
+</div>

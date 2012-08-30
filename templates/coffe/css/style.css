@@ -1,0 +1,9 @@
+body{background: #efefef;}
+#wrapper{margin: 0 auto;}
+#main-menu{width: 100%; background: #3C3C3C;}
+#header{margin-bottom: 20px; height: 80px;}
+.form-search{margin-top: 20px; float: right;}
+
+h1 {font-size: 28px;}
+.content{padding-top: 20px;}
+

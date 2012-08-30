@@ -1,0 +1,45 @@
+#coffe-panel * {margin:0; padding:0; !important; color:#fff; !important; font-size: 13px !important;}
+
+html{padding-top: 34px !important;}
+#coffe-panel{font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important; height: 34px;}
+#coffe-panel{line-height: 26px; !important}
+
+#coffe-panel{position: fixed; z-index: 999999; !important; left:0; top:0; width: 100%;}
+#coffe-panel .coffe-panel-inner{padding-left:46px; padding-right:20px; background: #000}
+#coffe-panel .coffe-panel-inner ul li{color:#fff; padding:4px 0; display: block; float:left; margin-right: 20px; cursor: pointer; !important; line-height: 26px; !important}
+#coffe-panel .coffe-panel-inner ul li a {color:#fff; text-decoration: none;!important;}
+#coffe-panel .coffe-panel-inner ul li a:hover {color: #a3a3a3 !important;}
+#coffe-panel .coffe-panel-inner ul li:hover {color: #a3a3a3 !important;}
+#coffe-panel .coffe-panel-inner:after {content: '.'; display: block; clear: both; visibility: hidden; height: 0; !important;}
+#coffe-panel .coffe-panel-inner ul li ul li{display: block; float:none; padding-left:10px;padding-right:10px; background: #000}
+#coffe-panel .coffe-panel-inner ul li ul{display: none; position:absolute; top:34px; z-index: 999999; !important;}
+#coffe-panel .coffe-panel-inner ul li:hover ul{display: block;   !important;}
+#coffe-panel ul{margin: 0; !important;}
+#coffe-panel li, #coffe-panel li a{ font-size: 13px !important;}
+#coffe-panel .coffe-panel-right{float: right; margin-top: 4px;}
+#coffe-panel .coffe-panel-welcome{float: left;}
+#coffe-panel .coffe-panel-exit{float: left; margin-left: 10px;}
+#coffe-panel .coffe-icon-panel {float: left; !important}
+#coffe-panel .coffe-icon-panel .coffe-icon {display: inline-block; margin-left: 5px; margin-top: 3px; cursor: pointer; vertical-align: middle;}
+
+#coffe-window-iframe{width:100%; height:100% !important;}
+#coffe-window-wrapper{background-color: #fff; border:3px solid;  border-color: #414f66; !important;}
+#coffe-window-wrapper-inner{background-color: #fff; !important;}
+#coffe-window-close{background: url('../img/close_button.png'); height: 12px; position: absolute; right: 11px; top: 6px; width: 12px; z-index: 200000; cursor: pointer;}
+
+.coffe-error-block{margin: 20px auto 0 auto; width: 500px;}
+.cf-cmp-cache{ border: 1px dashed #a6bf1f;}
+.cf-cmp-edit {position: relative;}
+.cf-cmp-edit .cf-cp-menu{position: absolute; top:0; left:0; z-index: 3000; display: none;}
+.cf-cmp-edit:hover .cf-cp-menu{display: block; height: 20px; border: 1px solid #d8d8d8;}
+
+.cf-cmp-uncache{border: 1px dashed #bf3127;}
+
+.cf-cmp-edit .cf-cp-menu-item {display: inline-block; margin-right: 3px;}
+.cf-cmp-edit .cf-cp-menu{background: #fff !important;}
+
+
+
+
+
+

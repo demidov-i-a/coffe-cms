@@ -1,0 +1,74 @@
+<div class="coffe-form-body">
+<hr/>
+<h1><?php echo $this->lang('MODULE_SECTION_INFO') ?></h1>
+<dl class="dl-horizontal">
+	<dt><?php echo $this->lang('MODULE_DT_ID') ?></dt>
+	<dd><?php echo $this->module_info['name'] ?></dd>
+
+	<dt><?php echo $this->lang('MODULE_DT_TITLE')?></dt>
+	<dd><?php echo isset($this->module_info['description']['title']) ? $this->module_info['description']['title'] : '' ?></dd>
+
+	<dt><?php echo $this->lang('MODULE_DT_VERSION')?></dt>
+	<dd><?php echo isset($this->module_info['description']['version']) ? $this->module_info['description']['version'] : '' ?></dd>
+
+	<dt><?php echo $this->lang('MODULE_DT_DESCRIPTION')?></dt>
+	<dd><?php echo isset($this->module_info['description']['description']) ? $this->module_info['description']['description'] : '' ?></dd>
+
+</dl>
+
+<div class="clearfix"></div>
+
+
+	<hr/>
+	<h1><?php echo $this->lang('MODULE_SECTION_DB') ?></h1>
+
+	<?php if ($this->have_scheme) :?>
+
+	<?if ($this->moduleFlash->count()): ?>
+		<div id="module-messages-block">
+			<?php
+			$mes = '';
+			$messages = $this->moduleFlash->getAll();
+			foreach ($messages as $type => $items){
+				foreach ($items as $item){
+					$mes .= '<div class="alert alert-'. $type .'">' . $item . '</div>';
+				}
+			}
+			$this->moduleFlash->clearAll();
+			echo $mes;
+			?>
+		</div>
+		<?endif?>
+
+	<?if ($this->need_db_update): ?>
+		<div class="coffe-form-block">
+			<form action="<?php echo $this->url(null, array('action' => 'updateDB', 'module' => $this->module))?>" method="post">
+				<h2><?php echo $this->lang('NEED_SCHEME_UPDATE2')?></h2>
+
+				<?php foreach($this->scheme_differences as $name => $dif):?>
+				<h2><?php echo $name?></h2>
+				<ul class="indent">
+					<?php foreach($dif as $column_name => $params):?>
+					<li><b><?php echo $column_name?></b>
+
+						<ul class="indent">
+							<?php foreach($params as $param_name => $param_value):?>
+							<li><?php echo $param_name?> = <?php echo $param_value?></li>
+							<?php endforeach?>
+						</ul>
+
+					</li>
+					<?php endforeach?>
+				</ul>
+				<?php endforeach?>
+				<br/>
+				<input type="submit" name="update_db" value="<?php echo $this->lang('UPDATE_DB_BUTTON')?>">
+			</form>
+		</div>
+		<? endif ?>
+
+
+	<?php else: ?>
+	<?php echo $this->lang('MODULE_NO_SCHEME') ?>
+	<?php endif ?>
+</div>

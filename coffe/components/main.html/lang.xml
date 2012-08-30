@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>component</type>
+		<description>Описание компонента Main.Html</description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="title">Чистый HTML</label>
+			<label id="description">Просто html-код</label>
+		</name>
+	</data>
+</lang>

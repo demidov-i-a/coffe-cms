@@ -1,0 +1,39 @@
+<?php if (is_array($this->components) && count($this->components)):?>
+
+<div class="coffe-form-body">
+	<table class="coffe-table coffe-table-wide">
+		<tr>
+			<th><?php echo $this->lang('table_head_uid')?></th>
+			<th><?php echo $this->lang('table_head_id')?></th>
+			<th><?php echo $this->lang('table_head_template')?></th>
+			<th><?php echo $this->lang('table_head_title')?></th>
+			<th><?php echo $this->lang('table_head_content')?></th>
+			<th><?php echo $this->lang('table_head_hidden')?></th>
+			<th><?php echo $this->lang('table_head_cache')?></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<?php foreach ($this->components as $component):?>
+		<tr>
+			<td><?php echo $component['uid']?></td>
+			<td><?php echo $component['id']?></td>
+			<td><?php echo $component['template']?></td>
+			<td><?php echo Coffe_Functions::cutStr($component['title'],50, true,'...',Coffe::getConfig('charset','utf-8'))?></td>
+			<td><?php echo Coffe_Functions::cutStr($component['content'],50, true,'...',Coffe::getConfig('charset','utf-8'))?></td>
+			<td><?php echo ($component['hidden'] ? $this->lang('yes') : $this->lang('no'))?></td>
+			<td><?php echo ($component['cache'] ? $this->lang('yes') : $this->lang('no'))?></td>
+			<td>
+				<a onclick="return confirm('<?php echo htmlspecialchars($this->lang('remove_confirm',array('COMPONENT' => $component['title'])))?>')" href="<?php echo $this->urlLf('component', $component['uid'], array('operation'=>'remove','back_url' => $this->url()))?>">
+					<?php echo $this->icon('common/remove', $this->lang('remove_component'))?></a>
+				&nbsp;
+				<a href="<?php echo $this->urlLf('component', $component['uid'], array('back_url' => $this->url()))?>">
+					<?php echo $this->icon('common/edit', $this->lang('edit_component'))?>
+				</a>
+			</td>
+		</tr>
+		<?php endforeach?>
+	</table>
+</div>
+<?php else:?>
+<?php echo $this->lang('empty_component_list')?>
+<?php endif?>

@@ -1,0 +1,90 @@
+/* MENU */
+
+.jquery-multi-menu {
+ background: #e5e5e5;
+ float: left;
+ margin: 0; padding: 0;
+ border: 1px solid black;
+ border-bottom: none;
+}
+
+.jquery-multi-menu ul{
+    margin: 0;
+}
+
+.jquery-multi-menu li a, .jquery-multi-menu li {
+ float: left;
+}
+
+.jquery-multi-menu li {
+ list-style: none;
+ position: relative;
+    z-index: 100;
+}
+
+.jquery-multi-menu li a {
+ padding: 10px 20px;
+ text-decoration: none;
+ color: white;
+ background: #292929;
+ background: -moz-linear-gradient(top, black, #3c3c3c 1px, #292929 25px);
+ background: -webkit-gradient(linear, left top, left 25, from(black), color-stop(4%, #3c3c3c), to(#292929));
+ border-right: 1px solid #3c3c3c;
+ border-left: 1px solid #292929;
+ border-bottom: 1px solid #232323;
+ border-top: 1px solid #545454;
+}
+
+.jquery-multi-menu li a:hover {
+ background: #2a0d65;
+ background: -moz-linear-gradient(top, #11032e, #2a0d65);
+ background: -webkit-gradient(linear, left top, left bottom, from(#11032e), to(#2a0d65));
+}
+
+
+/* Submenu */
+
+.hasChildren {
+	position: absolute;
+	width: 5px; height: 5px;
+	background: black;
+	right : 0;
+	bottom: 0;
+}
+
+.jquery-multi-menu li ul {
+ display: none;
+ position: absolute;
+ left: 0;
+ top: 100%;
+ padding: 0; margin: 0;
+}
+
+.jquery-multi-menu li:hover > ul {
+ display: block;
+}
+
+.jquery-multi-menu li ul li, .jquery-multi-menu li ul li a {
+ float: none;
+}
+
+.jquery-multi-menu li ul li {
+ _display: inline; /* for IE6 */
+}
+
+.jquery-multi-menu li ul li a {
+ width: 150px;
+ display: block;
+}
+
+/* SUBSUB Menu */
+
+.jquery-multi-menu li ul li ul {
+ display: none;
+}
+
+.jquery-multi-menu li ul li:hover ul {
+ left: 100%;
+ top: 0;
+}
+

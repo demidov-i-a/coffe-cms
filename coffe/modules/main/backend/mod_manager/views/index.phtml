@@ -1,0 +1,31 @@
+<div class="coffe-form-body">
+	<table class="coffe-table coffe-table-wide">
+		<tr>
+			<th><?php echo $this->lang('NAME_ID')?></th>
+			<th><?php echo $this->lang('NAME_TITLE')?></th>
+			<th><?php echo $this->lang('VERSION_TITLE')?></th>
+			<th><?php echo $this->lang('INSTALL_TITLE')?></th>
+		</tr>
+		<?php foreach($this->modules as $module): ?>
+		<tr>
+			<td><?php echo $module['name'] ?></td>
+			<td>
+				<a href="<?php echo $this->url(null,array('action' => 'module', 'module' => $module['name']))?>">
+					<?php echo (isset($module['description']['title']) && trim($module['description']['title'])) ? $module['description']['title'] : $module['name'] ?>
+				</a>
+			</td>
+			<td><?php echo isset($module['description']['version']) ? $module['description']['version'] : ''  ?></td>
+
+			<?php if  ($module['name'] != 'main'): ?>
+			<?php if  (isset($module['install']) && $module['install']): ?>
+				<td><a href="<?php echo $this->url(null,array('action' => 'uninstall', 'module' => $module['name']))?>"><?php echo $this->lang('UNINSTALL')?></a></td>
+				<?php else:?>
+				<td><a href="<?php echo $this->url(null,array('action' => 'install', 'module' => $module['name']))?>"><?php echo $this->lang('INSTALL')?></a></td>
+				<?php endif?>
+			<?php else: ?>
+			<td></td>
+			<?php endif?>
+		</tr>
+		<?php endforeach?>
+	</table>
+</div>

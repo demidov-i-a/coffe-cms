@@ -1,0 +1,85 @@
+<script type="text/javascript">
+	function selectComponent(id){
+		$('#component_id').attr('value', id);
+		$('.coffe-form-block form').first().submit();
+	}
+</script>
+
+
+<form id="goto_back" action="<?php echo $this->url()?>" method="get">
+	<input type="hidden" value="1" name="cancel" />
+	<input type="hidden" value="addComponent" name="action"/>
+	<input type="hidden" value="_cp_manager" name="_module_"/>
+	<?php if ($this->back_url) :?>
+	<input type="hidden" value="<?php echo $this->back_url ?>" name="back_url"/>
+	<?php endif ?>
+</form>
+
+<?php
+/**
+ * TODO: что если data - многомерный массив???
+ */
+?>
+
+<div class="coffe-form-block">
+	<form action="<?php echo $this->url('_liveform')?>" method="get">
+		<input type="hidden" value="" name="data[id]" id="component_id"/>
+		<input type="hidden" value="_liveform" name="_module_"/>
+		<input type="hidden" value="component" name="table"/>
+		<?php if (is_array($this->data)) :?>
+		<?php foreach ($this->data as $key => $value) :?>
+			<input type="hidden" value="<?php echo $value ?>" name="data[<?php echo $key ?>]"/>
+			<?php endforeach?>
+		<?php endif ?>
+
+		<?php if (is_array($this->sorting)) :?>
+		<?php foreach ($this->sorting as $key => $value) :?>
+			<input type="hidden" value="<?php echo $value ?>" name="sorting[<?php echo $key ?>]"/>
+			<?php endforeach?>
+		<?php endif ?>
+
+		<?php if ($this->back_url) :?>
+		<input type="hidden" value="<?php echo $this->back_url ?>" name="back_url"/>
+		<?php endif ?>
+
+		<div class="coffe-form-tabs-menu">
+			<ul>
+				<?php foreach ($this->component_groups as $key => $group) :?>
+				<?php if (isset($this->component_sorting[$group])):?>
+					<li <?php echo ($key > 0) ? '' : 'class="active"' ?> data-tab="<?php echo $group?>"><?php echo $this->lang('cp_tab_' . $group)?></li>
+					<?php endif?>
+				<?php endforeach?>
+			</ul>
+
+			<div class="clearfix"></div>
+		</div>
+		<div class="coffe-form-body">
+			<?php foreach ($this->component_groups as $key => $group) :?>
+			<?php if (isset($this->component_sorting[$group])):?>
+				<div class="coffe-form-tab-item tab-<?php echo $group?>-block" <?php echo ($key > 0) ? 'style="display:none"' : '' ?>>
+					<?php foreach ($this->component_sorting[$group] as $key) :?>
+					<div onclick="selectComponent('<?php echo $this->components[$key]['id']?>')" class="coffe-component">
+						<div class="component-wrapper">
+							<div class="component-icon">
+
+							</div>
+							<div class="component-description">
+								<div class="component-title">
+									<?php echo $this->components[$key]['description']['title']?>
+								</div>
+								<div class="component-info">
+									<?php echo isset($this->components[$key]['description']['description']) ?  Coffe_Functions::cutStr($this->components[$key]['description']['description'],400) : ''?>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+						</div>
+					</div>
+					<?php endforeach?>
+				</div>
+				<?php endif?>
+			<?php endforeach?>
+			<input class="button medium theme" type="button" onclick="$('#goto_back').submit()" name="cancel" value="<?php echo $this->lang('cancel')?>">
+		</div>
+	</form>
+</div>

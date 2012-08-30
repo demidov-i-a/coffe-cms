@@ -1,0 +1,21 @@
+<div class="login-block coffe-background2" >
+	<div class="coffe-form-block">
+		<form action="" method="post">
+			<h1><?php echo $this->lang('login_title')?></h1>
+
+			<input type="hidden" name="redirect_url" id="redirect_url" value="<?php echo ($this->redirect_url)?>"/><br/>
+
+			<div class="element-wrapper">
+				<label for="login"><?php echo $this->lang('login')?></label>
+				<input autofocus="autofocus" type="text" name="login" id="login" value="<?php echo htmlspecialchars($this->login)?>"/><br/>
+			</div>
+
+			<div class="element-wrapper">
+				<label for="password"><?php echo $this->lang('password')?></label>
+				<input type="password" name="password" id="password" value=""/>
+			</div>
+
+			<input type="submit" name="submit"  value="<?php echo $this->lang('submit')?>"/>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+    <meta>
+        <type>module</type>
+        <description>Модуль управления компонентами</description>
+    </meta>
+    <data>
+        <name id="ru">
+            <label id="table_head_uid">ID</label>
+            <label id="table_head_id">Компонент</label>
+            <label id="table_head_template">Шаблон</label>
+            <label id="table_head_title">Заголовок</label>
+            <label id="table_head_content">Содержимое</label>
+            <label id="table_head_hidden">Отключен</label>
+            <label id="table_head_cache">Кеш</label>
+
+            <label id="yes">Да</label>
+            <label id="no">Нет</label>
+
+            <label id="remove_confirm"><![CDATA[Удалить компонент <b>###COMPONENT###</b> ?]]></label>
+            <label id="remove_component">Удалить компонент</label>
+            <label id="edit_component">Редактировать компонент</label>
+
+            <label id="empty_component_list">Список компонетов пуст</label>
+            <label id="new_component">Добавить</label>
+
+
+            <label id="page_not_found">Целевая страница не найдена</label>
+            <label id="add_component">Добавление нового компонент</label>
+            <label id="add_component_page"><![CDATA[Добавление компонента на страницу <b>###PAGE###</b>]]></label>
+            <label id="cancel">Отменить</label>
+
+            <label id="cp_tab_main">Основное</label>
+            <label id="cp_tab_user">Пользователь</label>
+            <label id="cp_tab_forms">Формы</label>
+            <label id="cp_tab_media">Медиа</label>
+            <label id="cp_tab_plugin">Дополнения</label>
+            <label id="cp_tab_other">Прочее</label>
+        </name>
+    </data>
+</lang>

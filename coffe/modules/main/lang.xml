@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>module</type>
+		<description>Описание модуля main</description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="module_title">Основной модуль</label>
+			<label id="module_description">Главный системный модуль</label>
+
+            <label id="menu_pages">Страница</label>
+            <label id="menu_pages_add">Добавить страницу</label>
+            <label id="menu_pages_add_sub">Добавить подстраницу</label>
+            <label id="menu_pages_edit">Редактировать</label>
+            <label id="menu_config">Конфигурация</label>
+            <label id="menu_mod_manager">Модули</label>
+            <label id="menu_cp_manager">Компоненты</label>
+            <label id="menu_user">Пользователи</label>
+            <label id="menu_user_group">Группы</label>
+
+
+            <label id="table_page_record_title">страницы</label>
+			<label id="table_page_tab_default">Доп. поля</label>
+			<label id="table_page_tab_main">Основное</label>
+            <label id="table_page_tab_config">Конфигурация</label>
+            <label id="table_page_tab_meta">Метаданные</label>
+            <label id="table_page_hidden">Скрыть</label>
+            <label id="table_page_type">Тип</label>
+            <label id="table_page_type10">Стандарт</label>
+            <label id="table_page_type20">Ссылка</label>
+            <label id="table_page_title">Заголовок</label>
+            <label id="table_page_nav_title">Заголовок для меню</label>
+            <label id="table_page_nav_hide">Скрыть в меню</label>
+            <label id="table_page_link">Ссылка</label>
+            <label id="table_page_alias">Псевдоним URL</label>
+            <label id="table_page_config">Конфигурация</label>
+            <label id="table_page_description">Описание</label>
+            <label id="table_page_keywords">Ключевые слова</label>
+
+            <label id="cant_remove_page">Страница содержит подстраницы, удаление не возможно</label>
+            <label id="page_bad_alias">Ошибка при формировании alias страницы</label>
+
+
+			<label id="table_component_tab_main">Основное</label>
+			<label id="table_component_tab_config">Конфигурация</label>
+			<label id="table_component_tab_default">Доп. поля</label>
+			<label id="table_component_content">Содержимое</label>
+			<label id="table_component_title">Заголовок</label>
+			<label id="table_component_hidden">Скрыть</label>
+			<label id="table_component_cache">Кеш включен</label>
+			<label id="table_component_config">Параметры</label>
+            <label id="table_component_template">Шаблон</label>
+			<label id="table_component_position">Позиция</label>
+            <label id="table_component_cp_group">Группа</label>
+
+            <label id="table_component_position0">Позиция 1</label>
+			<label id="table_component_position1">Позиция 2</label>
+			<label id="table_component_position2">Позиция 3</label>
+			<label id="table_component_position3">Позиция 4</label>
+            <label id="table_component_record_title">компонента</label>
+
+            <label id="table_user_tab_main">Основное</label>
+            <label id="table_user_tab_default">Доп. поля</label>
+            <label id="table_user_record_title">пользователя</label>
+
+            <label id="table_user_disable">Отключен</label>
+            <label id="table_user_username">Имя пользователя</label>
+            <label id="table_user_admin">Админ</label>
+            <label id="table_user_last_name">Фамилия</label>
+            <label id="table_user_first_name">Имя</label>
+            <label id="table_user_middle_name">Отчество</label>
+            <label id="table_user_external">Внешний идентификатор</label>
+            <label id="table_user_password">Пароль</label>
+            <label id="table_user_group">Группа</label>
+
+            <label id="welcome_message" type="array">Здравствуйте, ###USER###!</label>
+            <label id="exit_message" type="array">Выйти</label>
+
+            <label id="remove_component_confirm" type="array">Удалить компонент ###COMPONENT### ?</label>
+		</name>
+	</data>
+</lang>

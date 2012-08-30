@@ -1,0 +1,38 @@
+<?php if (is_array($this->users) && count($this->users)):?>
+
+<div class="coffe-form-body">
+	<table class="coffe-table coffe-table-wide">
+		<tr>
+			<th><?php echo $this->lang('table_head_uid')?></th>
+			<th><?php echo $this->lang('table_head_username')?></th>
+			<th><?php echo $this->lang('table_head_last_name')?></th>
+			<th><?php echo $this->lang('table_head_first_name')?></th>
+			<th><?php echo $this->lang('table_head_middle_name')?></th>
+			<th><?php echo $this->lang('table_head_admin')?></th>
+			<th><?php echo $this->lang('table_head_disable')?></th>
+			<th></th>
+		</tr>
+		<?php foreach ($this->users as $user):?>
+		<tr>
+			<td><?php echo $user['uid']?></td>
+			<td><?php echo $user['username']?></td>
+			<td><?php echo $user['last_name']?></td>
+			<td><?php echo $user['first_name']?></td>
+			<td><?php echo $user['middle_name']?></td>
+			<td><?php echo ($user['admin'] ? $this->lang('yes') : $this->lang('no'))?></td>
+			<td><?php echo ($user['disable'] ? $this->lang('yes') : $this->lang('no'))?></td>
+			<td>
+				<a onclick="return confirm('<?php echo htmlspecialchars($this->lang('remove_confirm',array('USER' => $user['username'])))?>')" href="<?php echo $this->urlLf('user', $user['uid'], array('operation'=>'remove','back_url' => $this->url()))?>">
+					<?php echo $this->icon('common/remove', $this->lang('remove_config'))?></a>
+				&nbsp;
+				<a href="<?php echo $this->urlLf('user', $user['uid'], array('back_url' => $this->url()))?>">
+					<?php echo $this->icon('common/edit', $this->lang('edit_config'))?>
+				</a>
+			</td>
+		</tr>
+		<?php endforeach?>
+	</table>
+</div>
+<?php else:?>
+<?php echo $this->lang('empty_user_list')?>
+<?php endif?>

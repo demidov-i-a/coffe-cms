@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>module</type>
+		<description>Описание модуля md5password</description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="module_title">md5password</label>
+			<label id="module_description">Позволяет хранить пароли в md5</label>
+		</name>
+	</data>
+</lang>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>component</type>
+		<description>Описание компонента Main.Text</description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="title">Текст</label>
+			<label id="description">Текст с визуальным редактором</label>
+		</name>
+	</data>
+</lang>

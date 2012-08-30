@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	[[HEAD]]
+	<link href="[[TEMPLATE_URL]]css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all" />
+	<link href="[[TEMPLATE_URL]]css/style.css" type="text/css" rel="stylesheet" media="all" />
+
+</head>
+<body>
+[[PANEL]]
+
+<div id="wrapper">
+	<div class="container" id="header">
+		<div class="row">
+			<div class="span8">&nbsp;</div>
+			<div class="span4">
+				<form class="form-search">
+					<input placeholder="Поиск..." type="text" class="input-medium search-query">
+					<button type="submit" class="btn">Search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			[!component:50!]
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="content">
+				[[content]]
+			</div>
+		</div>
+	</div>
+
+	<?php if (Coffe::getID() == 1):?>
+	<div class="container">
+		<div class="row">
+			<div class="span6">
+
+				<div class="content">
+					<h2>Новости</h2>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="content">
+					<h2>Преимущества</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php endif?>
+
+</div>
+<div id="footer">
+	[[group:footer]]
+</div>
+</body>
+</html>

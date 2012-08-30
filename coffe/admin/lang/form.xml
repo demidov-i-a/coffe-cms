@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>other</type>
+		<description>Языковой файл для Coffe Form</description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="SUBMIT" type="array">Сохранить</label>
+            <label id="CANCEL" type="array">Отменить</label>
+            <label id="APPLY" type="array">Применить</label>
+
+
+            <label id="is_empty" type="array">Значение не может быть пустым</label>
+
+		</name>
+	</data>
+</lang>

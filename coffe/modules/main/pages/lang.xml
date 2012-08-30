@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>module</type>
+		<description></description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="PAGE_NOT_FOUND">Страница не найдена</label>
+            <label id="EDIT_PAGE">Редактировать</label>
+            <label id="REMOVE_PAGE">Удалить</label>
+            <label id="MOVE_PAGE">Переместить</label>
+            <label id="INSERT_PAGE">Вставить</label>
+            <label id="ADD_PAGE_TITLE">Добавить страницу</label>
+            <label id="PAGE_NONAME">Без имени</label>
+            <label id="PAGE">Просмотр страницы "###PAGE###"</label>
+            <label id="NEW_PAGE">Новая страница</label>
+            <label id="NEW_PAGE_TITLE">Создание новой страницы в "###PAGE###"</label>
+            <label id="EDIT_PAGE_TITLE">Редактирование страницы "###PAGE###"</label>
+            <label id="REMOVE_CONFIRM">Удалить страницу "###PAGE###" ?</label>
+            <label id="PAGE_TYPE10">Стандарт</label>
+            <label id="PAGE_TYPE20">Ссылка</label>
+            <label id="FORM_LABEL_TYPE">Тип страницы</label>
+            <label id="FORM_LABEL_TITLE">Заголовок</label>
+            <label id="FORM_LABEL_NAV_TITLE">Заголовок для меню</label>
+            <label id="FORM_LABEL_NAV_HIDE">Скрыть из меню</label>
+            <label id="FORM_LABEL_ALIAS">Псевдоним URL</label>
+            <label id="FORM_LABEL_DESCRIPTION">Описание</label>
+            <label id="FORM_LABEL_KEYWORDS">Ключевые слова</label>
+            <label id="FORM_LABEL_DESCRIPTION">Описание</label>
+            <label id="FORM_LABEL_HIDDEN">Скрыть</label>
+            <label id="FORM_LABEL_LINK">Ссылка</label>
+            <label id="FORM_LABEL_TEMPLATE">Шаблон</label>
+            <label id="FORM_LABEL_CONFIG">Конфигурация</label>
+            <label id="FORM_LABEL_SUB_TEMPLATE">Шаблон подстраниц</label>
+            <label id="FORM_LABEL_SUB_CONFIG">Конфигурация для подстраниц</label>
+            <label id="TEMPLATE_NOT_SET">Не задан</label>
+            <label id="VALIDATE_NOT_EMPTY">Поле не может быть пустым</label>
+            <label id="PAGE_NOT_FOUND">Страница не найдена</label>
+            <label id="SUBMIT">Сохранить</label>
+            <label id="APPLY">Применить</label>
+            <label id="CANCEL">Отменить</label>
+            <label id="MOVE_PAGE_NOT_SELECT">Страница для перемещения не выбранна</label>
+            <label id="TABS_MAIN">Основное</label>
+            <label id="TABS_CONFIG">Настройка</label>
+            <label id="TABS_DESCRIPTION">Описание</label>
+            <label id="TABS_EXT">Доп. поля</label>
+            <label id="MOVE_ERROR1">Перемещение не возможно: исходная страница внутри ветки</label>
+            <label id="MOVE_INFO">Выберите страницу для перемещения в дереве страниц и нажмите Вставить в основном меню</label>
+            <label id="ADD_COMPONENT_LABEL">Добавить компонент</label>
+            <label id="ADD_COMPONENT_BEFORE_LABEL">Добавить компонент перед</label>
+            <label id="ADD_COMPONENT_AFTER_LABEL">Добавить компонент после</label>
+            <label id="ADD_COMPONENT_TITLE"><![CDATA[Добавление компонента на страницу <b>###PAGE###</b>]]></label>
+            <label id="BT_MOVE_UP">Вверх</label>
+            <label id="BT_MOVE_DOWN">Вниз</label>
+            <label id="BT_MOVE_REMOVE">Удалить</label>
+            <label id="BT_MOVE_EDIT">Редактировать</label>
+            <label id="REMOVE_COMPONENT_CONFIRM">Удалить компонент ###COMPONENT### ?</label>
+            <label id="select_position">Выберите позицию для добавления страницы</label>
+            <label id="INSERT_HERE">Вставить на эту позицию</label>
+		</name>
+	</data>
+</lang>

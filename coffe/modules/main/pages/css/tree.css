@@ -1,0 +1,10 @@
+#page-tree{background: #fff; padding: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5); }
+#page-tree .page-normal{background:url('../../../../admin/icons/tree/folder_blue.png') left top no-repeat; }
+#page-tree .page-nav-hide{background:url('../../../../admin/icons/tree/folder_blue_light.png') left top no-repeat; }
+#page-tree .page-over{padding-left: 17px;}
+#page-tree .page-hidden{background:url('../../../../admin/icons/tree/hidden.png') 5px 2px no-repeat;}
+#page-tree .page-link{background:url('../../../../admin/icons/tree/link.png') 5px 2px no-repeat;}
+#page-tree .page{white-space: nowrap;}
+#page-tree .tree-line-level0 .page-over,
+#page-tree .tree-line-level0 .page-normal{padding-left: 0; background: none;}
+#page-tree .page-level-0 {background:url('../../../../admin/icons/tree/root.png') left top no-repeat;}

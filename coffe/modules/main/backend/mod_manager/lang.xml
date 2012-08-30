@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>module</type>
+		<description></description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="MODULE_LIST">Список модулей</label>
+            <label id="NAME_ID">ID</label>
+            <label id="NAME_TITLE">Название</label>
+            <label id="VERSION_TITLE">Версия</label>
+            <label id="STATE_TITLE">Состояние</label>
+            <label id="INSTALL_TITLE">Установка</label>
+            <label id="YES">Да</label>
+            <label id="NO">Нет</label>
+            <label id="INSTALL">Включить</label>
+            <label id="UNINSTALL">Отключить</label>
+            <label id="FILE_ERROR">Конфигурационный файл не доступен для записи. Проверьте наличие необходимых прав</label>
+            <label id="UPDATE_FILE_ERROR">Произошла ошибка при попытке обновить конфигурационный файл. Проверьте его наличие и необходимые права</label>
+            <label id="UPDATE_FILE_SUCCESS">Конфигурационный файл успешно обновлен</label>
+            <label id="UPDATE_FILE_TITLE">Обновить конфигурационный файл</label>
+            <label id="MODULE_NOT_FOUND">Модуль не найден</label>
+            <label id="MODULE_SECTION_INFO">Описание</label>
+            <label id="MODULE_TITLE"><![CDATA[Состояние модуля <b>###MODULE###</b>]]></label>
+            <label id="MODULE_DT_ID">ID</label>
+            <label id="MODULE_DT_TITLE">Название</label>
+            <label id="MODULE_DT_DESCRIPTION">Описание</label>
+            <label id="MODULE_DT_VERSION">Версия</label>
+            <label id="MODULE_SECTION_DB">База данных</label>
+            <label id="MODULE_NO_SCHEME">Модуль не расширяет базу данных</label>
+            <label id="NEED_SCHEME_UPDATE">Требуется обновление базы данных</label>
+            <label id="NO_NEED_SCHEME_UPDATE">Обновления базы не требуется</label>
+            <label id="NEED_SCHEME_UPDATE2">Некторые таблицы требуют обновления</label>
+            <label id="UPDATE_DB_BUTTON">Обновить</label>
+            <label id="UPDATE_DB_SUCCESS">База данных была успешно обновлена</label>
+		</name>
+	</data>
+</lang>

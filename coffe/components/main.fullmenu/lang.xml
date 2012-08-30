@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+    <meta>
+        <type>component</type>
+        <description>Описание компонента Main.FullMenu</description>
+    </meta>
+    <data>
+        <name id="ru">
+            <label id="title">Меню</label>
+            <label id="description">Компонент позволяет создать различного рода меню</label>
+
+
+
+            <label id="config_root_id">Начальная страница</label>
+            <label id="config_root_level">Уровень от root</label>
+            <label id="config_depth">Глубина</label>
+            <label id="config_sql_where">Условие where</label>
+            <label id="config_show_depth">Глубина отображения</label>
+
+            <label id="config_show_depth">Глубина отображения</label>
+            <label id="config_open_level">Открываемый уровень</label>
+            <label id="config_child_stop_level">Уровень остановки</label>
+            <label id="config_hide_levels">Какие уровни скрывать</label>
+            <label id="config_class">Класс</label>
+            <label id="config_max_level">Максимальный уровень вложенности элементов</label>
+
+        </name>
+    </data>
+</lang>

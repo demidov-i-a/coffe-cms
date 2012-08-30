@@ -1,0 +1,69 @@
+<?php
+$content = '';
+if (is_array($this->menu) && count($this->menu)){
+
+	$content .= '<div class="' . $this->class . '">';
+
+	//формируем массив, где в каждом ключе хранится значение следующего ключа
+	$next_keys = array();
+	$counter = 0;
+	$prev_key = 0;
+	foreach($this->menu as $key => $menu){
+		if ($counter){
+			$next_keys[$prev_key] = $key;
+		}
+		$prev_key = $key;
+		$counter++;
+	}
+
+	$counter = 1;
+	$cur_level = 0;
+	foreach($this->menu as $key => $menu){
+		$last = (count($this->menu) == $counter);
+		$first = ($counter == 1);
+		$class = '';
+		$class .= ($first) ? ' first-all' : '';
+		$class .= ($last) ? ' last-all' : '';
+
+		if (in_array($key, $this->branch)){
+			$class .= ' active';
+		}
+
+		if (!isset($next_keys[$key]) || ($this->level[$next_keys[$key]] != $this->level[$key])){
+			$class .= ' last';
+		}
+
+		//начинаем новый список
+		if ($this->level[$key] > $cur_level){
+			$class .= ' first';
+			$content .= '<ul>'.PHP_EOL.'<li class="'.trim($class).'">';
+		}
+		//продолжаем формирование
+		if ($this->level[$key] == $cur_level){
+			$content .= '</li>'. PHP_EOL . '<li class="'.trim($class).'">';
+		}
+		//закрываем предыдущий список
+		if ($this->level[$key] < $cur_level){
+			$tmp = $cur_level - $this->level[$key];
+			while($tmp){
+				$content .= '</li class="' . trim($class) . '">'. PHP_EOL;
+				$content .= '</ul>'. PHP_EOL;
+				$tmp--;
+			}
+			$content .= '<li>';
+		}
+		$content .= '<a href="'. $this->link[$key] . '">' . $menu . '</a>';
+		$cur_level = $this->level[$key];
+		$counter++;
+	}
+	$tmp = $cur_level;
+	while($tmp){
+		$content .= '</li>'. PHP_EOL;
+		$content .= '</ul>'. PHP_EOL;
+		$tmp--;
+	}
+	$content .= '</div>';
+	$content .= '<div class="clearfix"></div>';
+}
+
+echo $content;

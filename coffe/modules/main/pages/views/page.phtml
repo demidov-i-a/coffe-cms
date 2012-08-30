@@ -1,0 +1,97 @@
+<?php if (!empty($this->update_tree)):?>
+<script type="text/javascript">
+	parent.COFFE.updateNavFrame();
+</script>
+<?php endif?>
+
+<?php
+/**
+ * TODO: сделать хуки для вывода контента компонентов
+ */
+?>
+
+<script type="text/javascript">
+	$(function() {
+		$( "#page-component-ul" ).sortable({
+		});
+		$( "#page-component-ul" ).disableSelection();
+	});
+</script>
+
+<?php if (isset($this->page) && is_array($this->page)):?>
+<?php if ($this->page['uid'] != 0):?>
+	<div class="coffe-form-block">
+		<div class="coffe-form-body">
+			<div class="element-wrapper">
+				<form method="get" action="<?php echo $this->url()?>">
+					<input type="hidden" value="page" name="action" />
+					<input type="hidden" value="_pages" name="_module_" />
+					<input type="hidden" value="<?php echo $this->page['uid']?>" name="uid" />
+					<select onchange="$(this).closest('form').submit()" name="cp_position">
+						<?php foreach ($this->positions as $value => $position): ?>
+						<?php $selected = ($this->position == $value) ? 'selected="selected"' : ''?>
+						<option <?php echo $selected ?> value="<?php echo $value ?>"><?php echo $position ?></option>
+						<?php endforeach ?>
+					</select>
+				</form>
+			</div>
+			<?php $back_url = urlencode($this->url(null,array('action' => 'page','uid' => $this->page['uid'], 'cp_position' => $this->position))); ?>
+			<p>
+				<a href="<?php echo $this->url('_cp_manager', array('back_url' => $back_url,'action' => 'addComponent', 'data' => array('pid' => $this->page['uid'], 'position' => $this->position)))?>">
+					<?php echo $this->icon('common/addr', $this->lang('ADD_COMPONENT_LABEL'))?>
+				</a>
+			</p>
+			<?php if (count($this->components)):?>
+			<ul id="page-component-ul">
+				<?php foreach ($this->components as $key => $component):?>
+				<li>
+					<div class="page-component">
+						<div class="icons-block">
+
+							<a href="<?php echo $this->url('_liveform',array('primary' => $component['uid'],'table' => 'component','back_url' => $back_url))?>">
+								<?php echo $this->icon('common/edit', $this->lang('BT_MOVE_EDIT'))?>
+							</a>
+
+							<a href="<?php echo $this->url('_cp_manager', array('back_url' => $back_url,'action' => 'addComponent', 'data' => array('pid' => $this->page['uid'], 'position' => $this->position),'sorting'=> array('target' => $component['uid'], 'after' => '1')))?>">
+								<?php echo $this->icon('common/addr', $this->lang('ADD_COMPONENT_AFTER_LABEL'))?>
+							</a>
+
+							<a onclick="return confirm('<?php echo $this->lang('REMOVE_COMPONENT_CONFIRM',array('COMPONENT' => $component['id']))?>');" href="<?php echo $this->url('_liveform',array('operation' => 'remove','primary' => $component['uid'], 'back_url' => $back_url, 'table' => 'component') )?>">
+								<?php echo $this->icon('common/remove', $this->lang('BT_MOVE_REMOVE'))?>
+							</a>
+
+							<?php if ($key > 0):?>
+							<a href="<?php echo $this->url('_liveform',array('table' => 'component','operation' => 'moveup','primary' => $component['uid'], 'target' => $this->components[$key -1]['uid'], 'back_url' => $back_url) )?>">
+								<?php echo $this->icon('common/moveu', $this->lang('BT_MOVE_UP'))?>
+							</a>
+							<?php endif?>
+
+							<?php if ($key < count($this->components) - 1):?>
+							<a href="<?php echo $this->url('_liveform',array('table' => 'component','operation' => 'movedown','primary' => $component['uid'], 'target' => $this->components[$key + 1]['uid'], 'back_url' => $back_url) )?>">
+								<?php echo $this->icon('common/moved', $this->lang('BT_MOVE_DOWN'))?>
+							</a>
+							<?php endif?>
+
+						</div>
+						<div class="name">
+							<?php echo $component['id']?> [<?php echo $component['uid']?>]
+						</div>
+						<div class="title">
+							<?php echo $component['title']?>
+						</div>
+						<div class="content">
+							<?php echo Coffe_Functions::cutStr($component['content'], 200)?>
+						</div>
+					</div>
+				<li>
+			<?php endforeach?>
+			</ul>
+			<?php else:?>
+			<p>&nbsp;</p>
+			<?php endif?>
+		</div>
+	</div>
+	<?php endif?>
+<?php else:?>
+<?php echo $this->lang('PAGE_NOT_FOUND')?>
+<?php endif?>

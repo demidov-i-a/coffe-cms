@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+    <meta>
+        <type>module</type>
+        <description>Описание модуля User</description>
+    </meta>
+    <data>
+        <name id="ru">
+            <label id="user_list_title">Пользователи</label>
+            <label id="new_user">Добавить</label>
+            <label id="empty_user_list">Список пуст</label>
+            <label id="yes">Да</label>
+            <label id="no">Нет</label>
+            <label id="remove_confirm">Удалить пользователя "###USER###" ?</label>
+
+
+            <label id="table_head_uid">ID</label>
+            <label id="table_head_username">Имя пользователя</label>
+            <label id="table_head_last_name">Фамилия</label>
+            <label id="table_head_first_name">Имя</label>
+            <label id="table_head_middle_name">Отчетсво</label>
+            <label id="table_head_disable">Отключен</label>
+            <label id="table_head_admin">Админ</label>
+
+
+            <label id="table_head_uid">ID</label>
+            <label id="table_head_title">Название</label>
+            <label id="remove_group_confirm">Удалить группу ###GROUP### ?</label>
+            <label id="remove_group">Удалить группу</label>
+            <label id="edit_group">Редактировать группу</label>
+            <label id="empty_group_list">Список групп пуст</label>
+            <label id="new_group">Добавить</label>
+            <label id="groups">Группы</label>
+            <label id="create_group_title">Создание новой группы</label>
+
+            <label id="group_not_found">Группа не найдена</label>
+            <label id="title_empty">Заголовок не может быть пустым</label>
+            <label id="form_label_title">Заголовок</label>
+
+            <label id="submit">Сохранить</label>
+            <label id="apply">Применить</label>
+            <label id="cancel">Отмена</label>
+
+        </name>
+    </data>
+</lang>

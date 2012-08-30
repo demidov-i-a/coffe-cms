@@ -1,0 +1,37 @@
+<?php $action = isset($this->action) ? $this->action : 'add';  ?>
+<div class="coffe-form-body">
+	<?php if (!empty($this->page) && $this->page):  ?>
+	<h1><?php echo $this->lang('select_position')?></h1>
+	<h2><?php echo $this->page['title'] ?></h2>
+	<?php if (!empty($this->sub_pages) && is_array($this->sub_pages)):  ?>
+		<ul>
+			<?php foreach ($this->sub_pages as $key => $sub_page):  ?>
+			<li>
+				<a href="<?php echo $this->url($this->module_id,array('action' => $action,'uid' => $this->page['uid'],'target' => $sub_page['uid'],'position' => 'before'))?>">
+					<?php echo $this->icon('common/insert', $this->lang('INSERT_HERE'))?>
+				</a>
+			</li>
+			<li>&nbsp;<?php echo $sub_page['title'] ?></li>
+
+			<?php if ($key == (count($this->sub_pages) - 1)):  ?>
+				<li>
+					<a href="<?php echo $this->url($this->module_id,array('action' => $action,'uid' => $this->page['uid'],'target' => $sub_page['uid'],'position' => 'after'))?>">
+						<?php echo $this->icon('common/insert', $this->lang('INSERT_HERE'))?>
+					</a>
+				</li>
+				<?php endif  ?>
+			<?php endforeach ?>
+		</ul>
+		<?php else:  ?>
+		<ul>
+			<li>
+				<a href="<?php echo $this->url($this->module_id,array('action' => $action,'uid' => $this->page['uid'],'target' => 0,'position' => 'before'))?>">
+					<?php echo $this->icon('common/insert', $this->lang('INSERT_HERE'))?>
+				</a>
+			</li>
+		</ul>
+		<?php endif  ?>
+	<?php else:  ?>
+	<?php echo $this->lang('PAGE_NOT_FOUND') ?>
+	<?php endif  ?>
+</div>

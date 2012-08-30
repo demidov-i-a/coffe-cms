@@ -1,0 +1,1 @@
+<?php require dirname(__FILE__) . "/coffe/prolog.php"; ?>

@@ -1,0 +1,28 @@
+<?php if (is_array($this->groups) && count($this->groups)):?>
+
+<div class="coffe-form-body">
+	<table class="coffe-table coffe-table-wide">
+		<tr>
+			<th><?php echo $this->lang('table_head_uid')?></th>
+			<th><?php echo $this->lang('table_head_title')?></th>
+			<th></th>
+		</tr>
+		<?php foreach ($this->groups as $group):?>
+		<tr>
+			<td><?php echo $group['uid']?></td>
+			<td><?php echo $group['title']?></td>
+			<td>
+				<a onclick="return confirm('<?php echo htmlspecialchars($this->lang('remove_group_confirm',array('GROUP' => $group['title'])))?>')" href="<?php echo $this->url(null, array('action' => 'removeGroup', 'uid' => $group['uid']))?>">
+					<?php echo $this->icon('common/remove', $this->lang('remove_group'))?></a>
+				&nbsp;
+				<a href="<?php echo $this->url(null, array('action' => 'editGroup', 'uid' => $group['uid']))?>">
+					<?php echo $this->icon('common/edit', $this->lang('edit_group'))?>
+				</a>
+			</td>
+		</tr>
+		<?php endforeach?>
+	</table>
+</div>
+<?php else:?>
+<?php echo $this->lang('empty_group_list')?>
+<?php endif?>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+	<meta>
+		<type>module</type>
+		<description></description>
+	</meta>
+	<data>		
+		<name id="ru">
+			<label id="login">Имя пользователя</label>
+            <label id="password">Пароль</label>
+            <label id="submit">Отправить</label>
+            <label id="exit">Выход</label>
+            <label id="goto_site">На сайт</label>
+            <label id="login_title">Вход на сайт</label>
+            <label id="status">Статус пользователя</label>
+		</name>
+	</data>
+</lang>

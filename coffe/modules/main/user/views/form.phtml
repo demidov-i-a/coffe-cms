@@ -1,0 +1,20 @@
+<div class="coffe-form-block">
+	<form action="" method="post">
+
+		<div class="coffe-form-body">
+
+			<div class="element-wrapper">
+				<label for="group_title"><?php echo $this->lang('form_label_title')?></label>
+				<input id="group_title" type="text" value="<?php echo isset($this->data['title']) ? htmlspecialchars($this->data['title']) : ''  ?>" name="group[title]"/>
+				<?php echo (isset($this->errors['title'])) ? $this->partial('errors.phtml',array('errors' => $this->errors['title'])) : ''?>
+			</div>
+
+
+			<div class="element-wrapper">
+				<input class="button theme medium" id="submit" type="submit" value="<?php echo $this->lang('submit');?>" />
+				<input class="button theme medium" id="apply" type="submit" value="<?php echo $this->lang('apply');?>" name="apply"/>
+				<input class="button theme medium" id="cancel" type="submit" value="<?php echo $this->lang('cancel');?>" name="cancel"/>
+			</div>
+
+	</form>
+</div>
