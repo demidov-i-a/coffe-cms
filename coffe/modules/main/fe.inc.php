@@ -131,6 +131,7 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 		$menu = array();
 		if (is_array($data) && isset($data['uid']))
 		{
+			//ссылка на редактирование компонента
 			$edit_url = Coffe_ModuleManager::getBackendModuleUrl('_liveform', array(
 				'table' => 'component',
 				'primary' => $data['uid'],
