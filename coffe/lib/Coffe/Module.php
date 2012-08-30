@@ -171,6 +171,7 @@ class Coffe_Module
 	public function includeJsFiles()
 	{
 		Coffe::initHead()->addJsFile('jquery', Coffe::getUrlPrefix() . 'coffe/admin/js/jquery.js')
+			->addJsFile('twitter_bootstrap_js', Coffe::getUrlPrefix() . 'coffe/admin/js/bootstrap.min.js')
 			->addJsFile('admin_js', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/js/admin.js');
 	}
 
@@ -180,8 +181,10 @@ class Coffe_Module
 	 */
 	public function includeCssFiles()
 	{
-		Coffe::initHead()->addCssFile('admin_css', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/css/admin.css')
-			->addCssFile('admin_buttons', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/css/buttons.css');
+
+		Coffe::initHead()->addCssFile('bootstrap.min.css', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/css/bootstrap.min.css')
+			->addCssFile('admin_css', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/css/admin.css');
+
 	}
 
 	/**

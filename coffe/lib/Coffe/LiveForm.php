@@ -119,7 +119,7 @@ class Coffe_LiveForm
 	 *
 	 * @var string
 	 */
-	protected $button_class = 'button medium theme';
+	protected $button_class = 'btn btn-theme';
 
 	/**
 	 * Конструктор

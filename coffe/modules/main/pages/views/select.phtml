@@ -4,7 +4,7 @@
 	<h1><?php echo $this->lang('select_position')?></h1>
 	<h2><?php echo $this->page['title'] ?></h2>
 	<?php if (!empty($this->sub_pages) && is_array($this->sub_pages)):  ?>
-		<ul>
+		<ul class="list-none">
 			<?php foreach ($this->sub_pages as $key => $sub_page):  ?>
 			<li>
 				<a href="<?php echo $this->url($this->module_id,array('action' => $action,'uid' => $this->page['uid'],'target' => $sub_page['uid'],'position' => 'before'))?>">
