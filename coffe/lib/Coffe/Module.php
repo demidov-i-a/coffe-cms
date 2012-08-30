@@ -71,6 +71,13 @@ class Coffe_Module
 	public $module_title = '';
 
 
+	/**
+	 * ID шаблона
+	 *
+	 * @var null
+	 */
+	protected $template_id = null;
+
 	public function __construct()
 	{
 		if (!trim($this->module_id)){
@@ -82,13 +89,15 @@ class Coffe_Module
 			else
 				$this->redirectToModule('_login',array('redirect_url' => $_SERVER['REQUEST_URI'])); exit();
 		}
+		$this->template_id = Coffe::getConfig('adminTemplate','default');
 		$this->initDB();
 		$this->initLayout();
 		$this->initLang();
 		$this->initFlash();
 		$this->initIcon();
 		$this->initView();
-
+		$this->includeJsFiles();
+		$this->includeCssFiles();
 	}
 
 	/**
@@ -145,19 +154,34 @@ class Coffe_Module
 	{
 		if ($this->layout === null){
 			$this->layout = new Coffe_View();
-			$template = Coffe::getConfig('adminTemplate','default');
-			$template_dir = PATH_ROOT . 'coffe/admin/templates/' . $template . '/';
+			$template_dir = PATH_ROOT . 'coffe/admin/templates/' . $this->template_id . '/';
 			if (!is_dir($template_dir)){
 				throw new Coffe_Exception("Not possibly about to initialize the module: the directory " . htmlspecialchars($template_dir) . " doesn't exist");
 			}
 			$this->layout->setDir($template_dir);
-			Coffe::initHead()->addCssFile('admin_css', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $template . '/css/admin.css')
-				->addCssFile('admin_buttons', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $template . '/css/buttons.css')
-				->addJsFile('jquery', Coffe::getUrlPrefix() . 'coffe/admin/js/jquery.js')
-				->addJsFile('admin_js', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $template . '/js/admin.js')
-				->addData('charset', '<meta http-equiv = "text/html" charset = "' . Coffe::getConfig('charset', 'utf-8') . '" />');
 		}
+		//кодировка
+		Coffe::initHead()->addData('charset', '<meta http-equiv = "text/html" charset = "' . Coffe::getConfig('charset', 'utf-8') . '" />');
 		return $this->layout;
+	}
+
+	/**
+	 * Подключение js - файлов
+	 */
+	public function includeJsFiles()
+	{
+		Coffe::initHead()->addJsFile('jquery', Coffe::getUrlPrefix() . 'coffe/admin/js/jquery.js')
+			->addJsFile('admin_js', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/js/admin.js');
+	}
+
+
+	/**
+	 * Подключение css файла
+	 */
+	public function includeCssFiles()
+	{
+		Coffe::initHead()->addCssFile('admin_css', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/css/admin.css')
+			->addCssFile('admin_buttons', Coffe::getUrlPrefix() . 'coffe/admin/templates/'. $this->template_id . '/css/buttons.css');
 	}
 
 	/**
