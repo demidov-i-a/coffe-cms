@@ -117,6 +117,7 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 	Coffe_ModuleManager::loadModuleLang('main');
 	$Lang = $GLOBALS['LANG'];
 
+	//формируем меню редактирования компонентов
 	if (Coffe::isEditMode()){
 		$class = 'cf-cmp-edit';
 

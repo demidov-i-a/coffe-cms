@@ -71,6 +71,7 @@ class Cp_Manager_Module extends Coffe_Module
 			return $this->redirectToBack();
 		}
 
+		//получение списка доступных компонентов
 		$this->view->components = Coffe_CpManager::getAllComponents();
 
 		$component_sorting = array();
