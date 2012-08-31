@@ -4,7 +4,7 @@
  *
  * Различные вспомогательные функции
  */
-class Coffe_Functions
+class Coffe_Func
 {
 
 	/**
@@ -243,7 +243,7 @@ class Coffe_Functions
 	public static function makePath($path)
 	{
 		//заменяем пути к модулям
-		$path = preg_replace_callback('#MODULE\:([^\/]+[\\\/]*)#s',array('Coffe_Functions','pregReplaceModule'), $path);
+		$path = preg_replace_callback('#MODULE\:([^\/]+[\\\/]*)#s',array('Coffe_Func','pregReplaceModule'), $path);
 		$path = preg_replace('#PATH_ROOT\:#s',PATH_ROOT, $path);
 		$path = preg_replace('#PATH_LIB\:#s',PATH_LIB, $path);
 		$path = preg_replace('#PATH_COFFE\:#s',PATH_COFFE, $path);
@@ -380,7 +380,7 @@ class Coffe_Functions
 	{
 		$lang = ($lang instanceof Coffe_Translate) ? $lang : $GLOBALS['LANG'];
 		if (is_array($array))
-			array_walk_recursive($array, array('Coffe_Functions','parseLangRecursive'),$lang);
+			array_walk_recursive($array, array('Coffe_Func','parseLangRecursive'),$lang);
 	}
 
 	/**
