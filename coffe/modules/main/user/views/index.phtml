@@ -12,7 +12,7 @@
 			<th><?php echo $this->lang('table_head_disable')?></th>
 			<th></th>
 		</tr>
-		<?php foreach ($this->users as $user):?>
+		<?php foreach ($this->users as $key => $user):?>
 		<tr>
 			<td><?php echo $user['uid']?></td>
 			<td><?php echo $user['username']?></td>
