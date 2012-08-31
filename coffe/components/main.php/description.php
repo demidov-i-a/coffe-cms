@@ -4,7 +4,7 @@ return array(
 	'title' => 'LANG:PATH_CP:main.php/lang.xml;title',
 	'description' => 'LANG:description',
 	'group' => 'main',
-	'liveForm' => array(
+	'tableEditor' => array(
 		'elements' => array(
 			'config' => false,
 			'title' => false,

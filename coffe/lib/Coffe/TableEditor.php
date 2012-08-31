@@ -6,7 +6,7 @@
  * @package coffe_cms
  */
 
-class Coffe_LiveForm
+class Coffe_TableEditor
 {
 
 	/**
@@ -148,7 +148,7 @@ class Coffe_LiveForm
 	 * Получение переводчика
 	 *
 	 * @param $lang
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setLang($lang)
 	{
@@ -160,7 +160,7 @@ class Coffe_LiveForm
 	 * Установить action для формы
 	 *
 	 * @param $action
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setAction($action)
 	{
@@ -182,7 +182,7 @@ class Coffe_LiveForm
 	 * Установить method для формы
 	 *
 	 * @param $method
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setMethod($method)
 	{
@@ -204,7 +204,7 @@ class Coffe_LiveForm
 	 * Установка имени формы
 	 *
 	 * @param $name
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setName($name)
 	{
@@ -245,7 +245,7 @@ class Coffe_LiveForm
 	 * Установить активную группу
 	 *
 	 * @param $group
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setActiveGroup($group)
 	{
@@ -260,17 +260,17 @@ class Coffe_LiveForm
 	 * @param $name
 	 * @param null $config
 	 * @param string $group
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 * @throws Coffe_Exception
 	 */
 	public function addElement($class, $name, $config = null, $group = 'default')
 	{
 		if (isset($this->elements[$name])){
-			throw new Coffe_Exception('LiveForm: element with name ' . $name . ' already registered!');
+			throw new Coffe_Exception('TableEditor: element with name ' . $name . ' already registered!');
 		}
-		$element_class = 'Coffe_LiveForm_Element_' . $class;
+		$element_class = 'Coffe_TableEditor_Element_' . $class;
 		if (!class_exists($element_class)){
-			throw new Coffe_Exception('LiveForm: the element with class ' . $element_class . ' is not found!');
+			throw new Coffe_Exception('TableEditor: the element with class ' . $element_class . ' is not found!');
 		}
 		$this->elements[$name]['object'] = new $element_class($name, isset($config['config']) ? $config['config'] : null);
 		$this->elements[$name]['config'] = $config;
@@ -331,7 +331,7 @@ class Coffe_LiveForm
 	 * Построение формы на основе массива конфигурации
 	 *
 	 * @param array $config
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function build(array $config)
 	{
@@ -354,7 +354,7 @@ class Coffe_LiveForm
 	 * Установка групп элементов
 	 *
 	 * @param $groups
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setGroups($groups)
 	{
@@ -377,7 +377,7 @@ class Coffe_LiveForm
 	 *
 	 * @param $data
 	 * @param bool $from_db значения передаются из базы
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function populate($data, $from_db = false)
 	{
@@ -415,7 +415,7 @@ class Coffe_LiveForm
 				$type = strtolower($this->elements[$name]['config']['type']);
 				$label_class = '';
 
-				if ($type != 'liveform'){
+				if ($type != 'tableeditor'){
 					if ($type == 'checkbox') $label_class = 'label-inline-left';
 					$content .= '<label class="' . $label_class . '" for="'. $this->elements[$name]['object']->getID() .'">'. $this->elements[$name]['object']->getLabel() .'</label>';
 				}
@@ -618,7 +618,7 @@ class Coffe_LiveForm
 	{
 		$content = '';
 		if (count($this->buttons)){
-			$content .= '<div class="element-wrapper live-form-buttons">';
+			$content .= '<div class="element-wrapper tableeditor-buttons">';
 			if (in_array('submit', $this->buttons))
 				$content .= '<input class="' . $this->button_class . '" id="submit" type="submit" value="'.$this->lang->get('SUBMIT').'" />';
 			if (in_array('apply', $this->buttons))
@@ -634,7 +634,7 @@ class Coffe_LiveForm
 	 * Устанавливает массив кнопок формы
 	 *
 	 * @param $buttons
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setButtons($buttons)
 	{
@@ -646,7 +646,7 @@ class Coffe_LiveForm
 	 * Устанавливает класс кнопок
 	 *
 	 * @param $class
-	 * @return Coffe_LiveForm
+	 * @return Coffe_TableEditor
 	 */
 	public function setButtonsClass($class)
 	{

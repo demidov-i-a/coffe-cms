@@ -340,7 +340,7 @@ class Coffe_Module
 
 
 	/**
-	 * Получение ссылки на редактирование элемента LiveForm
+	 * Получение ссылки на редактирование элемента TableEditor
 	 *
 	 * @param $table
 	 * @param null $primary
@@ -349,7 +349,7 @@ class Coffe_Module
 	 */
 	public function urlLf($table, $primary = null, $params = array())
 	{
-		return $this->url('_liveform', array_merge($params, array('primary' => $primary, 'table' => $table)));
+		return $this->url('_tableeditor', array_merge($params, array('primary' => $primary, 'table' => $table)));
 	}
 
 	/**

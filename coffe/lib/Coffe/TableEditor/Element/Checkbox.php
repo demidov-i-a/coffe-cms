@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Ёлемент Checkbox дл€ LiveForm
+ * Ёлемент Checkbox дл€ TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_Checkbox extends Coffe_LiveForm_Element_Abstract
+class Coffe_TableEditor_Element_Checkbox extends Coffe_TableEditor_Element_Abstract
 {
 
 	/**
@@ -29,7 +29,7 @@ class Coffe_LiveForm_Element_Checkbox extends Coffe_LiveForm_Element_Abstract
 	 * ”становка значени€
 	 *
 	 * @param $value
-	 * @return Coffe_LiveForm_Element_Checkbox
+	 * @return Coffe_TableEditor_Element_Checkbox
 	 */
 	public function setValue($value, &$data = null)
 	{
@@ -41,7 +41,7 @@ class Coffe_LiveForm_Element_Checkbox extends Coffe_LiveForm_Element_Abstract
 	 * ”становка значени€ из базы
 	 *
 	 * @param $value
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setValueFromDB($value, &$data = null)
 	{

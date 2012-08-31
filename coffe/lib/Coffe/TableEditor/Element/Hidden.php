@@ -1,10 +1,10 @@
 <?php
 /**
- * Ёлемент Hidden дл€ LiveForm
+ * Ёлемент Hidden дл€ TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_Hidden extends Coffe_LiveForm_Element_Abstract
+class Coffe_TableEditor_Element_Hidden extends Coffe_TableEditor_Element_Abstract
 {
 
 	public function render()

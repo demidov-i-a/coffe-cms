@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Ёлемент RTE дл€ LiveForm
+ * Ёлемент RTE дл€ TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_RTE extends Coffe_LiveForm_Element_Textarea
+class Coffe_TableEditor_Element_RTE extends Coffe_TableEditor_Element_Textarea
 {
 
 	public function render()

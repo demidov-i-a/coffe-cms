@@ -180,7 +180,7 @@ class Pages_Module extends Coffe_Module
 		$this->module_title = ($this->lang('NEW_PAGE_TITLE',array('PAGE' => $this->view->page['title'])));
 		$this->view->sub_pages = $CPage->getByPid($uid,'');
 		if ($position = $this->_GET('position',false)){
-			return $this->redirect($this->url('_liveform',array(
+			return $this->redirect($this->url('_tableeditor',array(
 						'table' => 'page',
 						'data' => array('pid' => $this->view->page['uid']),
 						'back_url' => urlencode($this->url(null, array('action' => 'page', 'uid' => '_PRIMARY_', 'update_tree' => '1'))),
@@ -255,7 +255,7 @@ class Pages_Module extends Coffe_Module
 	public function getPageEditLink($uid)
 	{
 		$back_url = $this->url(null, array('action' => 'page','uid' => $uid,'update_tree' => '1'));
-		return $this->url('_liveform',array('table' => 'page','primary' => $uid, 'back_url' => urlencode($back_url)));
+		return $this->url('_tableeditor',array('table' => 'page','primary' => $uid, 'back_url' => urlencode($back_url)));
 	}
 
 	/**
@@ -289,7 +289,7 @@ class Pages_Module extends Coffe_Module
 	public function getPageRemoveLink($uid)
 	{
 		$back_url = $this->url(null,array('action' => 'page', 'uid' => 0,'update_tree' => 1));
-		return $this->url('_liveform',array('back_url' => $back_url, 'operation'=>'remove','primary' => $uid, 'table' => 'page'));
+		return $this->url('_tableeditor',array('back_url' => $back_url, 'operation'=>'remove','primary' => $uid, 'table' => 'page'));
 	}
 
 	/**
@@ -397,8 +397,8 @@ class Pages_Module extends Coffe_Module
 	public function getPositions()
 	{
 		$positions = array();
-		$ext = Coffe_ModuleManager::getLiveForm('component');
-		$form = new Coffe_LiveForm('tmp');
+		$ext = Coffe_ModuleManager::getTableEditor('component');
+		$form = new Coffe_TableEditor('tmp');
 		$form->build($ext);
 		$pos = $form->getElementObject('position');
 		if (is_object($pos)){

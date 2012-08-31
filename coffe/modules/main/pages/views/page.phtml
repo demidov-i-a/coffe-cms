@@ -48,7 +48,7 @@
 					<div class="page-component">
 						<div class="icons-block">
 
-							<a href="<?php echo $this->url('_liveform',array('primary' => $component['uid'],'table' => 'component','back_url' => $back_url))?>">
+							<a href="<?php echo $this->url('_tableeditor',array('primary' => $component['uid'],'table' => 'component','back_url' => $back_url))?>">
 								<?php echo $this->icon('common/edit', $this->lang('BT_MOVE_EDIT'))?>
 							</a>
 
@@ -56,18 +56,18 @@
 								<?php echo $this->icon('common/addr', $this->lang('ADD_COMPONENT_AFTER_LABEL'))?>
 							</a>
 
-							<a onclick="return confirm('<?php echo $this->lang('REMOVE_COMPONENT_CONFIRM',array('COMPONENT' => $component['id']))?>');" href="<?php echo $this->url('_liveform',array('operation' => 'remove','primary' => $component['uid'], 'back_url' => $back_url, 'table' => 'component') )?>">
+							<a onclick="return confirm('<?php echo $this->lang('REMOVE_COMPONENT_CONFIRM',array('COMPONENT' => $component['id']))?>');" href="<?php echo $this->url('_tableeditor',array('operation' => 'remove','primary' => $component['uid'], 'back_url' => $back_url, 'table' => 'component') )?>">
 								<?php echo $this->icon('common/remove', $this->lang('BT_MOVE_REMOVE'))?>
 							</a>
 
 							<?php if ($key > 0):?>
-							<a href="<?php echo $this->url('_liveform',array('table' => 'component','operation' => 'moveup','primary' => $component['uid'], 'target' => $this->components[$key -1]['uid'], 'back_url' => $back_url) )?>">
+							<a href="<?php echo $this->url('_tableeditor',array('table' => 'component','operation' => 'moveup','primary' => $component['uid'], 'target' => $this->components[$key -1]['uid'], 'back_url' => $back_url) )?>">
 								<?php echo $this->icon('common/moveu', $this->lang('BT_MOVE_UP'))?>
 							</a>
 							<?php endif?>
 
 							<?php if ($key < count($this->components) - 1):?>
-							<a href="<?php echo $this->url('_liveform',array('table' => 'component','operation' => 'movedown','primary' => $component['uid'], 'target' => $this->components[$key + 1]['uid'], 'back_url' => $back_url) )?>">
+							<a href="<?php echo $this->url('_tableeditor',array('table' => 'component','operation' => 'movedown','primary' => $component['uid'], 'target' => $this->components[$key + 1]['uid'], 'back_url' => $back_url) )?>">
 								<?php echo $this->icon('common/moved', $this->lang('BT_MOVE_DOWN'))?>
 							</a>
 							<?php endif?>

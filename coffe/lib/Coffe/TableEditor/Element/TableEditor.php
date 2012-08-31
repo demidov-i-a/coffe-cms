@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Элемент LiveForm для LiveForm
+ * Элемент TableEditor для TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_LiveForm extends Coffe_LiveForm_Element_Abstract
+class Coffe_TableEditor_Element_TableEditor extends Coffe_TableEditor_Element_Abstract
 {
 
 	/**
-	 * @var Coffe_LiveForm
+	 * @var Coffe_TableEditor
 	 */
 	protected $_form = null;
 
@@ -33,7 +33,7 @@ class Coffe_LiveForm_Element_LiveForm extends Coffe_LiveForm_Element_Abstract
 	public function __construct($name, $config = null)
 	{
 		parent::__construct($name, $config);
-		$this->_form = new Coffe_LiveForm($name);
+		$this->_form = new Coffe_TableEditor($name);
 		if ($this->_file_path !== null){
 			$file_path = Coffe_Functions::makePath($this->_file_path);
 			if (!file_exists($file_path)){
@@ -46,8 +46,8 @@ class Coffe_LiveForm_Element_LiveForm extends Coffe_LiveForm_Element_Abstract
 			Coffe_Functions::parseLangInArray($lv_config);
 			$this->_form->build($lv_config);
 		}
-		elseif (isset($config['liveForm'])){
-			$this->_form->build($config['liveForm']);
+		elseif (isset($config['tableEditor'])){
+			$this->_form->build($config['tableEditor']);
 		}
 	}
 
@@ -66,7 +66,7 @@ class Coffe_LiveForm_Element_LiveForm extends Coffe_LiveForm_Element_Abstract
 	 *
 	 * @param $value
 	 * @param null $data
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setValue($value, &$data = null)
 	{
@@ -80,7 +80,7 @@ class Coffe_LiveForm_Element_LiveForm extends Coffe_LiveForm_Element_Abstract
 	 *
 	 * @param $value
 	 * @param null $data
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setValueFromDB($value, &$data = null)
 	{
@@ -133,7 +133,7 @@ class Coffe_LiveForm_Element_LiveForm extends Coffe_LiveForm_Element_Abstract
 	 * Установка родителя
 	 *
 	 * @param $parent
-	 * @return Coffe_LiveForm_Element_LiveForm
+	 * @return Coffe_TableEditor_Element_TableEditor
 	 */
 	public function setParent($parent)
 	{
@@ -147,7 +147,7 @@ class Coffe_LiveForm_Element_LiveForm extends Coffe_LiveForm_Element_Abstract
 	 * Установить файл с конфигурацией
 	 *
 	 * @param $path
-	 * @return Coffe_LiveForm_Element_LiveForm
+	 * @return Coffe_TableEditor_Element_TableEditor
 	 */
 	public function setFilePath($path)
 	{

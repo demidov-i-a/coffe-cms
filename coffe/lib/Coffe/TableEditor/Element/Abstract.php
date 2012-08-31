@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Абстрактный элемент для LiveForm
+ * Абстрактный элемент для TableEditor
  *
  * @package coffe_cms
  *
  */
-abstract class Coffe_LiveForm_Element_Abstract
+abstract class Coffe_TableEditor_Element_Abstract
 {
 
 	/**
@@ -115,7 +115,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 * Установить обязательность заполнения
 	 *
 	 * @param $require
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setRequire($require)
 	{
@@ -150,7 +150,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 
 	/**
 	 * @param $value
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setHtmlspecialchars($value)
 	{
@@ -210,7 +210,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 * Установка родителя
 	 *
 	 * @param $parent
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setParent($parent)
 	{
@@ -222,7 +222,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 * Установить заголовок
 	 *
 	 * @param $label
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setLabel($label)
 	{
@@ -244,7 +244,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 * Установить класс
 	 *
 	 * @param $class
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setClass($class)
 	{
@@ -267,7 +267,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 *
 	 * @param $value
 	 * @param null $data
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setValue($value, &$data = null)
 	{
@@ -280,7 +280,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 *
 	 * @param $value
 	 * @param null $data
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setValueFromDB($value, &$data = null)
 	{
@@ -345,7 +345,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 * Установка массива ошибок
 	 *
 	 * @param $errors
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setErrors($errors)
 	{
@@ -358,7 +358,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	/**
 	 * Очистка списка ошибок
 	 *
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function clearErrors()
 	{
@@ -406,7 +406,7 @@ abstract class Coffe_LiveForm_Element_Abstract
 	 * Установка ID элемента
 	 *
 	 * @param $id
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setID($id)
 	{

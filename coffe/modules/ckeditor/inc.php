@@ -6,7 +6,7 @@ Coffe_Event::register('RTE.beforeContent', 'ckeditor_before_content');
 /**
  * @param $element
  */
-function ckeditor_before_content(Coffe_LiveForm_Element_RTE $element)
+function ckeditor_before_content(Coffe_TableEditor_Element_RTE $element)
 {
 	$content = '';
 	$head = Coffe::getHead();

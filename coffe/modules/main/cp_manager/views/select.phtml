@@ -22,9 +22,9 @@
 ?>
 
 <div class="coffe-form-block">
-	<form action="<?php echo $this->url('_liveform')?>" method="get">
+	<form action="<?php echo $this->url('_tableeditor')?>" method="get">
 		<input type="hidden" value="" name="data[id]" id="component_id"/>
-		<input type="hidden" value="_liveform" name="_module_"/>
+		<input type="hidden" value="_tableeditor" name="_module_"/>
 		<input type="hidden" value="component" name="table"/>
 		<?php if (is_array($this->data)) :?>
 		<?php foreach ($this->data as $key => $value) :?>

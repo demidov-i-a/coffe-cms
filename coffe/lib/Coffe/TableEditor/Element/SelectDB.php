@@ -1,10 +1,10 @@
 <?php
 /**
- * Элемент SelectDB для LiveForm
+ * Элемент SelectDB для TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
+class Coffe_TableEditor_Element_SelectDB extends Coffe_TableEditor_Element_Select
 {
 
 	/**
@@ -118,7 +118,7 @@ class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
 	 * Задать имя таблицы
 	 *
 	 * @param $table
-	 * @return Coffe_LiveForm_Element_SelectDB
+	 * @return Coffe_TableEditor_Element_SelectDB
 	 */
 	public function setTable($table)
 	{
@@ -140,7 +140,7 @@ class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
 	 * Установка primary-key таблицы
 	 *
 	 * @param $primary
-	 * @return Coffe_LiveForm_Element_SelectDB
+	 * @return Coffe_TableEditor_Element_SelectDB
 	 */
 	public function setPrimary($primary)
 	{
@@ -163,7 +163,7 @@ class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
 	 * Задать сортироку
 	 *
 	 * @param $sql
-	 * @return Coffe_LiveForm_Element_SelectDB
+	 * @return Coffe_TableEditor_Element_SelectDB
 	 */
 	public function setSqlSorting($sql)
 	{
@@ -185,7 +185,7 @@ class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
 	 * Установка условия
 	 *
 	 * @param $sql
-	 * @return Coffe_LiveForm_Element_SelectDB
+	 * @return Coffe_TableEditor_Element_SelectDB
 	 */
 	public function setSqlWhere($sql)
 	{
@@ -208,7 +208,7 @@ class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
 	 * Установка полей
 	 *
 	 * @param $fields
-	 * @return Coffe_LiveForm_Element_SelectDB
+	 * @return Coffe_TableEditor_Element_SelectDB
 	 */
 	public function setFields($fields)
 	{
@@ -231,7 +231,7 @@ class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
 	 * Задать поле заголовка
 	 *
 	 * @param $title
-	 * @return Coffe_LiveForm_Element_SelectDB
+	 * @return Coffe_TableEditor_Element_SelectDB
 	 */
 	public function setTitle($title)
 	{
@@ -253,7 +253,7 @@ class Coffe_LiveForm_Element_SelectDB extends Coffe_LiveForm_Element_Select
 	 * Установка элементов по умолчанию
 	 *
 	 * @param $options
-	 * @return Coffe_LiveForm_Element_SelectDB
+	 * @return Coffe_TableEditor_Element_SelectDB
 	 */
 	public function setDefaultOptions($options)
 	{

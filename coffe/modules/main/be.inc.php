@@ -27,8 +27,8 @@ function __beforeBuild__($table, $table_ext, $primary, $primary_value, $data, $f
 		$id = isset($row['id']) ? $row['id'] : (isset($data['id']) ? $data['id'] : false);
 		if ($id){
 			$ext_component = Coffe_CpManager::getOneComponent($id);
-			if ($ext_component && isset($ext_component['description']['liveForm']) && is_array($ext_component['description']['liveForm'])){
-				$ext = $ext_component['description']['liveForm'];
+			if ($ext_component && isset($ext_component['description']['tableEditor']) && is_array($ext_component['description']['tableEditor'])){
+				$ext = $ext_component['description']['tableEditor'];
 				$table_ext = Coffe_ModuleManager::mergeExtTables($table_ext, $ext);
 			}
 		}
@@ -152,20 +152,20 @@ function __checkPageAlias__(&$alias, $uid = null)
 
 
 //обработка компонентов
-Coffe_Event::register('LiveForm.afterBuild', '__afterBuild__');
-Coffe_Event::register('LiveForm.beforeBuild', '__beforeBuild__');
+Coffe_Event::register('TableEditor.afterBuild', '__afterBuild__');
+Coffe_Event::register('TableEditor.beforeBuild', '__beforeBuild__');
 
 //обработка страниц
-Coffe_Event::register('LiveForm.beforeOperation', '__beforePageOperation__');
-Coffe_Event::register('LiveForm.beforeAdd', '__beforeAdd__');
-Coffe_Event::register('LiveForm.beforeUpdate', '__beforeUpdate__');
+Coffe_Event::register('TableEditor.beforeOperation', '__beforePageOperation__');
+Coffe_Event::register('TableEditor.beforeAdd', '__beforeAdd__');
+Coffe_Event::register('TableEditor.beforeUpdate', '__beforeUpdate__');
 
-Coffe_Event::register('LiveForm.afterUpdate', '__afterRecordUpdate__');
-Coffe_Event::register('LiveForm.afterAdd', '__afterRecordAdd__');
+Coffe_Event::register('TableEditor.afterUpdate', '__afterRecordUpdate__');
+Coffe_Event::register('TableEditor.afterAdd', '__afterRecordAdd__');
 
 //добавление backend-модулей
 $be_path =  'coffe/modules/main/';
-Coffe_ModuleManager::registerBM($module, '_liveform', $be_path . 'liveform/liveform.php;Liveform_Module->run');
+Coffe_ModuleManager::registerBM($module, '_tableeditor', $be_path . 'tableeditor/tableeditor.php;Tableeditor_Module->run');
 Coffe_ModuleManager::registerBM($module, '_cp_manager', $be_path . 'cp_manager/cp_manager.php;Cp_Manager_Module->run');
 Coffe_ModuleManager::registerBM($module,'_login', $be_path . 'login/login.php;Login_Module->run');
 Coffe_ModuleManager::registerBM($module,'_user', $be_path . 'user/user.php;User_Module->run');

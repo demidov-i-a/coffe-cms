@@ -518,13 +518,13 @@ class Coffe_ModuleManager
 	 * @param $table
 	 * @return array
 	 */
-	public static function getLiveForm($table)
+	public static function getTableEditor($table)
 	{
 		$modules = self::getModulesDescription();
 		$table_ext = array();
 		foreach ($modules as $module){
-			if (isset($module['description']['liveForm'][$table]) && is_array($module['description']['liveForm'][$table])){
-				$table_ext = self::mergeExtTables($table_ext, $module['description']['liveForm'][$table]);
+			if (isset($module['description']['tableEditor'][$table]) && is_array($module['description']['tableEditor'][$table])){
+				$table_ext = self::mergeExtTables($table_ext, $module['description']['tableEditor'][$table]);
 			}
 		}
 		Coffe_Event::call('afterBuildExtTable',array($table, &$table_ext));

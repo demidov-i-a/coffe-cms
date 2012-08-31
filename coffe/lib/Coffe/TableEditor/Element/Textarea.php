@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Элемент Textarea для LiveForm
+ * Элемент Textarea для TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_Textarea extends Coffe_LiveForm_Element_Abstract
+class Coffe_TableEditor_Element_Textarea extends Coffe_TableEditor_Element_Abstract
 {
 
 	/**
@@ -42,7 +42,7 @@ class Coffe_LiveForm_Element_Textarea extends Coffe_LiveForm_Element_Abstract
 	 * Установка атрибута $rows
 	 *
 	 * @param $value
-	 * @return Coffe_LiveForm_Element_Textarea
+	 * @return Coffe_TableEditor_Element_Textarea
 	 */
 	public function setRows($value)
 	{
@@ -64,7 +64,7 @@ class Coffe_LiveForm_Element_Textarea extends Coffe_LiveForm_Element_Abstract
 	 * Установка атрибута cols
 	 *
 	 * @param $value
-	 * @return Coffe_LiveForm_Element_Textarea
+	 * @return Coffe_TableEditor_Element_Textarea
 	 */
 	public function setCols($value)
 	{

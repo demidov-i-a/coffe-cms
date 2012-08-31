@@ -5,7 +5,7 @@ return array(
 	'description' => 'LANG:module_description',
 	'version' => '0.7',
 	'state' => 'alpha',
-	'liveForm' => array(
+	'tableEditor' => array(
 		'page' => array(
 			'primary' => 'uid',
 			'sorting_field' => 'sorting',

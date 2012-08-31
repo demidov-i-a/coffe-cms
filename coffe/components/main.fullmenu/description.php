@@ -3,7 +3,7 @@
 return array(
 	'title' => 'LANG:PATH_CP:main.fullmenu/lang.xml;title',
 	'description' => 'LANG:description',
-	'liveForm' => array(
+	'tableEditor' => array(
 		'elements' => array(
 			'cache' => array(
 				'config' => array(
@@ -12,7 +12,7 @@ return array(
 			),
 			'content' => false,
 			'config' => array(
-				'type' => 'liveForm',
+				'type' => 'tableEditor',
 				'config' => array(
 					'file_path' => 'PATH_CP:main.fullmenu/config.php',
 				),

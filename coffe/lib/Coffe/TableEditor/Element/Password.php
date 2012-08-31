@@ -1,10 +1,10 @@
 <?php
 /**
- * Элемент Password для LiveForm
+ * Элемент Password для TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_Password extends Coffe_LiveForm_Element_Abstract
+class Coffe_TableEditor_Element_Password extends Coffe_TableEditor_Element_Abstract
 {
 
 
@@ -20,7 +20,7 @@ class Coffe_LiveForm_Element_Password extends Coffe_LiveForm_Element_Abstract
 	 * Установка флага отображения пароля
 	 *
 	 * @param $show_password
-	 * @return Coffe_LiveForm_Element_Password
+	 * @return Coffe_TableEditor_Element_Password
 	 */
 	public function setShowPassword($show_password)
 	{

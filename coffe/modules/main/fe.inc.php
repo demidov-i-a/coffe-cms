@@ -36,7 +36,7 @@ function __create_menu_main_module__()
 		//редактирование текущей страницы
 		Coffe_ModuleManager::addMenu('_pages_edit', $Lang->get('menu_pages_edit'), array(
 			'position' => '_pages',
-			'be_module' => '_liveform',
+			'be_module' => '_tableeditor',
 			'be_params' => array(
 				'table' => 'page',
 				'primary' => $page['uid']
@@ -132,13 +132,13 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 		if (is_array($data) && isset($data['uid']))
 		{
 			//ссылка на редактирование компонента
-			$edit_url = Coffe_ModuleManager::getBackendModuleUrl('_liveform', array(
+			$edit_url = Coffe_ModuleManager::getBackendModuleUrl('_tableeditor', array(
 				'table' => 'component',
 				'primary' => $data['uid'],
 				'back_url' => urlencode(Coffe_Functions::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
 			));
 
-			$remove_url = Coffe_ModuleManager::getBackendModuleUrl('_liveform', array(
+			$remove_url = Coffe_ModuleManager::getBackendModuleUrl('_tableeditor', array(
 				'table' => 'component',
 				'primary' => $data['uid'],
 				'operation' => 'remove',
@@ -147,7 +147,7 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 
 			$move_up_url = false;
 			if (($key !== null) && (isset($list[$key - 1])))
-				$move_up_url = Coffe_ModuleManager::getBackendModuleUrl('_liveform', array(
+				$move_up_url = Coffe_ModuleManager::getBackendModuleUrl('_tableeditor', array(
 					'table' => 'component',
 					'primary' => $data['uid'],
 					'operation' => 'moveup',
@@ -157,7 +157,7 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 
 			$move_down_url = false;
 			if (($key !== null) && (isset($list[$key + 1])))
-				$move_down_url = Coffe_ModuleManager::getBackendModuleUrl('_liveform', array(
+				$move_down_url = Coffe_ModuleManager::getBackendModuleUrl('_tableeditor', array(
 					'table' => 'component',
 					'primary' => $data['uid'],
 					'operation' => 'movedown',

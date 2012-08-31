@@ -1,10 +1,10 @@
 <?php
 /**
- * Ёлемент Select дл€ LiveForm
+ * Ёлемент Select дл€ TableEditor
  *
  * @package coffe_cms
  */
-class Coffe_LiveForm_Element_Select extends Coffe_LiveForm_Element_Abstract
+class Coffe_TableEditor_Element_Select extends Coffe_TableEditor_Element_Abstract
 {
 
 	/**
@@ -47,7 +47,7 @@ class Coffe_LiveForm_Element_Select extends Coffe_LiveForm_Element_Abstract
 	 * ”становка элементов списка
 	 *
 	 * @param $options
-	 * @return Coffe_LiveForm_Element_Select
+	 * @return Coffe_TableEditor_Element_Select
 	 */
 	public function setOptions($options)
 	{
@@ -61,7 +61,7 @@ class Coffe_LiveForm_Element_Select extends Coffe_LiveForm_Element_Abstract
 	 * ”становка значений только дл€ чтени€
 	 *
 	 * @param $values
-	 * @return Coffe_LiveForm_Element_Select
+	 * @return Coffe_TableEditor_Element_Select
 	 */
 	public function setReadOnlyValues($values)
 	{
@@ -100,7 +100,7 @@ class Coffe_LiveForm_Element_Select extends Coffe_LiveForm_Element_Abstract
 	 * ”становка атрибута Size
 	 *
 	 * @param $size
-	 * @return Coffe_LiveForm_Element_Select
+	 * @return Coffe_TableEditor_Element_Select
 	 */
 	public function setSize($size)
 	{
@@ -122,7 +122,7 @@ class Coffe_LiveForm_Element_Select extends Coffe_LiveForm_Element_Abstract
 	 * ”становка атрибута multiple
 	 *
 	 * @param $multiple
-	 * @return Coffe_LiveForm_Element_Select
+	 * @return Coffe_TableEditor_Element_Select
 	 */
 	public function setMultiple($multiple)
 	{
@@ -144,7 +144,7 @@ class Coffe_LiveForm_Element_Select extends Coffe_LiveForm_Element_Abstract
 	 * ”становка разделител€ значений
 	 *
 	 * @param $delimiter
-	 * @return Coffe_LiveForm_Element_Select
+	 * @return Coffe_TableEditor_Element_Select
 	 */
 	public function setValueDelimiter($delimiter)
 	{
@@ -244,7 +244,7 @@ class Coffe_LiveForm_Element_Select extends Coffe_LiveForm_Element_Abstract
 	 * ”становка значени€ из базы
 	 *
 	 * @param $value
-	 * @return Coffe_LiveForm_Element_Abstract
+	 * @return Coffe_TableEditor_Element_Abstract
 	 */
 	public function setValueFromDB($value, &$data = null)
 	{
