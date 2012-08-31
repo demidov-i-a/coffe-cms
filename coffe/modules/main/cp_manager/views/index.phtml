@@ -21,8 +21,8 @@
 					<td><?php echo $component['id']?></td>
 					<td><input type="text" name="cp_groups[<?php echo $component['uid']?>]" value="<?php echo htmlspecialchars($component['cp_group'])?>"></td>
 					<td><?php echo $component['template']?></td>
-					<td><?php echo Coffe_Functions::cutStr($component['title'],50, true,'...',Coffe::getConfig('charset','utf-8'))?></td>
-					<td><?php echo Coffe_Functions::cutStr($component['content'],50, true,'...',Coffe::getConfig('charset','utf-8'))?></td>
+					<td><?php echo Coffe_Func::cutStr($component['title'],50, true,'...',Coffe::getConfig('charset','utf-8'))?></td>
+					<td><?php echo Coffe_Func::cutStr($component['content'],50, true,'...',Coffe::getConfig('charset','utf-8'))?></td>
 					<td><?php echo ($component['hidden'] ? $this->lang('yes') : $this->lang('no'))?></td>
 					<td><?php echo ($component['cache'] ? $this->lang('yes') : $this->lang('no'))?></td>
 					<td>

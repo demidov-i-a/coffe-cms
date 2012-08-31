@@ -58,7 +58,7 @@ class Coffe_CpManager
             if (file_exists($description_file_path)){
                 $component['description'] = require($description_file_path);
                 if (is_array($component['description'])){
-                    Coffe_Functions::parseLangInArray($component['description']);
+                    Coffe_Func::parseLangInArray($component['description']);
                 }
             }
             if (!isset($component['description']['title'])){
@@ -219,7 +219,7 @@ class Coffe_CpManager
         $component = trim($id);
         $parts = explode('.', $component);
 
-        $template_parts = Coffe_Functions::trimExplode(':',$template);
+        $template_parts = Coffe_Func::trimExplode(':',$template);
 
         if (count($template_parts) != 2){
             return self::showError("The template of a component isn't found");
@@ -322,7 +322,7 @@ class Coffe_CpManager
                 if ($onclick && !trim($href)){$href = 'javascript:void(0)';}
                 $icon = '';
                 if (isset($item['icon'])){
-                    $icon = Coffe_Functions::getIcon($item['icon']);
+                    $icon = Coffe_Func::getIcon($item['icon']);
                 }
                 $content .= '<span><a href="' . $href . '" onclick="' . $onclick . '">'. $icon . '</a></span>';
                 $content .= '</div>';

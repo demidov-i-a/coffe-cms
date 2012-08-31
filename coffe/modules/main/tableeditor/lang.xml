@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<lang>
+    <meta>
+        <type>module</type>
+        <description>Описание модуля TableEditor</description>
+    </meta>
+    <data>
+        <name id="ru">
+            <label id="add_record" type="array">Создание записи</label>
+            <label id="edit_record" type="array">Редактирование записи</label>
+            <label id="add_record_template" type="array">Создание ###TITLE###</label>
+            <label id="edit_record_template" type="array">Редактирование ###TITLE###</label>
+            <label id="operation_cancel" type="array">Операция отменена</label>
+        </name>
+    </data>
+</lang>

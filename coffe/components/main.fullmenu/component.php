@@ -39,7 +39,7 @@ class Main_FullMenu_Component extends Coffe_Component
 		$open_level = $this->conf('open_level');
 		$show_depth = $this->conf('show_depth');
 		$child_stop_level = $this->conf('child_stop_level');
-		$hide_levels = Coffe_Functions::trimExplode(",", $this->conf('hide_levels'));
+		$hide_levels = Coffe_Func::trimExplode(",", $this->conf('hide_levels'));
 		$cid = Coffe::getID();
 		$branch = array();
 		$this->getBranch($branch, $cid);

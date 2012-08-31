@@ -99,7 +99,7 @@ class Pages_Module extends Coffe_Module
 	public function clickMinusAction()
 	{
 		$open = $this->_GP('open','');
-		$arr = Coffe_Functions::trimExplode(',', $open, true);
+		$arr = Coffe_Func::trimExplode(',', $open, true);
 		$CPage = Coffe_Page::getInstance();
 		if (is_array($arr)){
 			$CPage->setOpenedIDArray($arr);

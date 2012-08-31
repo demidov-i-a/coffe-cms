@@ -122,7 +122,7 @@ class Coffe_ModuleManager
 	private static function getInstalledModules()
 	{
 		$modules = Coffe::getConfig('modules', '');
-		$modules = Coffe_Functions::trimExplode(',', $modules, true);
+		$modules = Coffe_Func::trimExplode(',', $modules, true);
 		//основной модуль
 		if (!in_array('main', $modules)){
 			array_push($modules, 'main');
@@ -356,7 +356,7 @@ class Coffe_ModuleManager
 				if (file_exists(PATH_ROOT . $modules[$module_key]['path'] . self::$_module_desc_file)){
 					$modules[$module_key]['description'] = require(PATH_ROOT . $modules[$module_key]['path'] . self::$_module_desc_file);
 					if (is_array($modules[$module_key]['description'])){
-						Coffe_Functions::parseLangInArray($modules[$module_key]['description']);
+						Coffe_Func::parseLangInArray($modules[$module_key]['description']);
 					}
 				}
 			}
@@ -392,7 +392,7 @@ class Coffe_ModuleManager
 			throw new Coffe_Exception('The backend module ' . htmlspecialchars($name) . ' already registered');
 		}
 
-		$function = Coffe_Functions::explodeFunctionPath($callback);
+		$function = Coffe_Func::explodeFunctionPath($callback);
 
 		if (!isset($function['file']) || !is_file(PATH_ROOT . $function['file'])){
 			throw new Coffe_Exception('The file of the module isn\'t found: ' . htmlspecialchars($function['file']));

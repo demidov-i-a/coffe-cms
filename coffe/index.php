@@ -8,6 +8,6 @@ Coffe::initUser();
 
 Coffe_ModuleManager::initModules();
 
-Coffe::setUrlPrefix(Coffe_Functions::getAbsPrefixUrl());
+Coffe::setUrlPrefix(Coffe_Func::getAbsPrefixUrl());
 
 header('Location: ' . Coffe_ModuleManager::getBackendModuleUrl('_login'));

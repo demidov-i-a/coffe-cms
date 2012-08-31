@@ -84,7 +84,7 @@ class Coffe_Translate
      */
     public function loadFile($path, $force = false)
     {
-        $ext = Coffe_Functions::getFileExt($path);
+        $ext = Coffe_Func::getFileExt($path);
         switch($ext){
             case 'xml': $this->loadXmlFile($path, $force); break;
         }
@@ -247,7 +247,7 @@ class Coffe_Translate
         $parts = explode(';', $name);
         //указан путь к файлу, загружаем его
         if (count($parts) > 1){
-            $this->loadFile(Coffe_Functions::makePath($parts[0]));
+            $this->loadFile(Coffe_Func::makePath($parts[0]));
             $name = $parts[1];
         }
         //пытаемся найти в последнем загруженном файле
@@ -295,7 +295,7 @@ class Coffe_Translate
      */
     private function returnStr($str, $marker_array)
     {
-        return is_array($marker_array) ? Coffe_Functions::strReplaceMarkers($str, $marker_array) : $str;
+        return is_array($marker_array) ? Coffe_Func::strReplaceMarkers($str, $marker_array) : $str;
     }
 
 

@@ -85,10 +85,10 @@ function main_afterInitHead($head)
 	$page = Coffe::getPage();
 	$keywords[] = Coffe::getConfig('keywords');
 	$keywords[] = $page['keywords'];
-	Coffe_Functions::clearEmptyArray($keywords);
+	Coffe_Func::clearEmptyArray($keywords);
 	$description[] = Coffe::getConfig('description');
 	$description[] = $page['description'];
-	Coffe_Functions::clearEmptyArray($description);
+	Coffe_Func::clearEmptyArray($description);
 	$head->addData('charset', '<meta http-equiv="Content-Type" content="text/html; charset='.Coffe::getConfig('charset').'" ' . $head->getCloseTag());
 	$forceTitle = Coffe::getConfig('forceTitle');
 	Coffe::setTitle(empty($forceTitle) ? $page['title'] : $forceTitle);
@@ -135,14 +135,14 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 			$edit_url = Coffe_ModuleManager::getBackendModuleUrl('_tableeditor', array(
 				'table' => 'component',
 				'primary' => $data['uid'],
-				'back_url' => urlencode(Coffe_Functions::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
+				'back_url' => urlencode(Coffe_Func::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
 			));
 
 			$remove_url = Coffe_ModuleManager::getBackendModuleUrl('_tableeditor', array(
 				'table' => 'component',
 				'primary' => $data['uid'],
 				'operation' => 'remove',
-				'back_url' => urlencode(Coffe_Functions::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
+				'back_url' => urlencode(Coffe_Func::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
 			));
 
 			$move_up_url = false;
@@ -152,7 +152,7 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 					'primary' => $data['uid'],
 					'operation' => 'moveup',
 					'target' => $list[$key - 1]['uid'],
-					'back_url' => urlencode(Coffe_Functions::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
+					'back_url' => urlencode(Coffe_Func::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
 				));
 
 			$move_down_url = false;
@@ -162,13 +162,13 @@ function main_afterComponentInclude($content, $id, $template, $config, $data, $k
 					'primary' => $data['uid'],
 					'operation' => 'movedown',
 					'target' => $list[$key + 1]['uid'],
-					'back_url' => urlencode(Coffe_Functions::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
+					'back_url' => urlencode(Coffe_Func::getAbsPrefixUrl() . 'coffe/includes/close_update.html')
 				));
 
 			$add_url = Coffe_ModuleManager::getBackendModuleUrl('_cp_manager', array(
 				'action' => 'addComponent',
 				'data' => array('pid' => $data['pid']),
-				'back_url' => urlencode(Coffe_Functions::getAbsPrefixUrl() . 'coffe/includes/close_update.html'),
+				'back_url' => urlencode(Coffe_Func::getAbsPrefixUrl() . 'coffe/includes/close_update.html'),
                 'sorting' => array('target' => $data['uid'], 'after' => '1')
 			));
 

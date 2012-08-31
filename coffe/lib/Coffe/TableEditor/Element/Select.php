@@ -88,7 +88,7 @@ class Coffe_TableEditor_Element_Select extends Coffe_TableEditor_Element_Abstrac
 	public function getOptions()
 	{
 		if (isset($this->_config['callback'])){
-			$result = Coffe_Functions::execCallBack($this->_config['callback'], array(&$this->read_only_values, &$this));
+			$result = Coffe_Func::execCallBack($this->_config['callback'], array(&$this->read_only_values, &$this));
 			if (is_array($result)){
 				$this->options = $result;
 			}

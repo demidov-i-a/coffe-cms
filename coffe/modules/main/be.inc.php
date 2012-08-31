@@ -60,7 +60,7 @@ function __beforeAdd__($table, $primary, $data, $cancel, $flash)
 		if (isset($data['alias'])){
 			if (!trim($data['alias'])){
 				if (isset($data['title'])){
-					$data['alias'] = Coffe_Functions::strToUrl($data['title'], Coffe::getConfig('charset'));
+					$data['alias'] = Coffe_Func::strToUrl($data['title'], Coffe::getConfig('charset'));
 				}
 			}
 			__checkPageAlias__($data['alias']);
@@ -84,7 +84,7 @@ function __beforeUpdate__($table, $primary, $primary_value, $data, $cancel, $fla
 		if (isset($data['alias'])){
 			if (!trim($data['alias'])){
 				if (isset($data['title'])){
-					$data['alias'] = Coffe_Functions::strToUrl($data['title'], Coffe::getConfig('charset'));
+					$data['alias'] = Coffe_Func::strToUrl($data['title'], Coffe::getConfig('charset'));
 				}
 			}
 			__checkPageAlias__($data['alias'], $primary_value);

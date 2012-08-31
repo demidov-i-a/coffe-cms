@@ -70,7 +70,7 @@ $content .= '<div class="coffe-icon-panel">';
 $content .= '<div class="coffe-icon">';
 $href = urldecode(Coffe::getUrlPrefix() . 'index.php?cfAjax=setUserKey&key=admin_edit_mode&data=' .( ($edit_mode) ? '0' : '1'));
 $content .= '<a href="javascript:void(0)" onclick="COFFE_PANEL.doAjaxOperation(\''.$href.'\',true)">';
-$content .= ($edit_mode) ? Coffe_Functions::getIcon('coffe/admin/icons/;panel/edit') : Coffe_Functions::getIcon('coffe/admin/icons/;panel/edit_off');
+$content .= ($edit_mode) ? Coffe_Func::getIcon('coffe/admin/icons/;panel/edit') : Coffe_Func::getIcon('coffe/admin/icons/;panel/edit_off');
 $content .= '</a>';
 $content .= '</div>';
 

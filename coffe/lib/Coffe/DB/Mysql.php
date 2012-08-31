@@ -480,7 +480,7 @@ class Coffe_DB_Mysql extends Coffe_DB_Abstract
 				case 'auto_increment': $type['autoincrement'] = true; break;
 			}
 		}
-		$types = Coffe_Functions::trimExplode(' ', strtolower($column['Type']));
+		$types = Coffe_Func::trimExplode(' ', strtolower($column['Type']));
 
 		if (count($types)){
 			/**

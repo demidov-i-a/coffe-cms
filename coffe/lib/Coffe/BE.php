@@ -45,14 +45,14 @@ class Coffe_BE
 			if (in_array('add', $buttons)){
 				$content .= '<li>';
 				$content .= '<a href="'.self::urlLF($table, null, array('back_url' => $add_back_url)).'">';
-				$content .= Coffe_Functions::getIcon('coffe/admin/icons/;common/addr');
+				$content .= Coffe_Func::getIcon('coffe/admin/icons/;common/addr');
 				$content .= '</a>';
 				$content .= '</li>';
 			}
 			if (in_array('edit', $buttons)){
 				$content .= '<li>';
 				$content .= '<a href="'.self::urlLF($table, $row[$tableeditor['primary']],array('back_url' => $edit_back_url)).'">';
-				$content .= Coffe_Functions::getIcon('coffe/admin/icons/;common/edit');
+				$content .= Coffe_Func::getIcon('coffe/admin/icons/;common/edit');
 				$content .= '</a>';
 				$content .= '</li>';
 			}
@@ -60,7 +60,7 @@ class Coffe_BE
 			if (in_array('remove', $buttons)){
 				$content .= '<li>';
 				$content .= '<a href="'.self::urlLF($table, $row[$tableeditor['primary']],array('operation' => 'remove','back_url' => $edit_back_url)).'">';
-				$content .= Coffe_Functions::getIcon('coffe/admin/icons/;common/remove');
+				$content .= Coffe_Func::getIcon('coffe/admin/icons/;common/remove');
 				$content .= '</a>';
 				$content .= '</li>';
 			}

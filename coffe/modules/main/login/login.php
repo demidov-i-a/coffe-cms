@@ -41,11 +41,11 @@ class Login_Module extends Coffe_Module
 		$this->view->login = '';
 		if ($this->isPost()){
 			if ($this->auth->authorize($this->_POST('login'),$this->_POST('password'))){
-				$this->redirect($this->_GET('redirect_url',Coffe_Functions::getAbsPrefixUrl()));
+				$this->redirect($this->_GET('redirect_url',Coffe_Func::getAbsPrefixUrl()));
 			}
 			$this->view->login = $this->_POST('login');
 		}
-		$this->view->redirect_url = $this->_GP('redirect_url', Coffe_Functions::getAbsPrefixUrl());
+		$this->view->redirect_url = $this->_GP('redirect_url', Coffe_Func::getAbsPrefixUrl());
 		$this->render('login.phtml', true, false);
 	}
 
@@ -56,7 +56,7 @@ class Login_Module extends Coffe_Module
 			$this->redirect($this->_GET('redirect_url',$this->url($this->module_id)));
 		}
 		$this->view->user = $this->auth->get();
-		$this->view->main_page_link = Coffe_Functions::getAbsPrefixUrl();
+		$this->view->main_page_link = Coffe_Func::getAbsPrefixUrl();
 		$this->render('user.phtml',true,false);
 
 	}

@@ -91,8 +91,8 @@ class Coffe_Page extends Coffe_Tree_DB
 		}
 		$charset = Coffe::getConfig('charset','UTF-8');
 		$data['alias'] = trim($data['alias'])
-			? Coffe_Functions::strToUrl($data['alias'], $charset)
-			: Coffe_Functions::strToUrl($data['title'], $charset);
+			? Coffe_Func::strToUrl($data['alias'], $charset)
+			: Coffe_Func::strToUrl($data['title'], $charset);
 
 		if (!strlen($data['alias'])){
 			throw new Coffe_Exception('There was a mistake in attempt to receive a page alias');
@@ -122,8 +122,8 @@ class Coffe_Page extends Coffe_Tree_DB
 		//корректируем псевдоним
 		$charset = Coffe::getConfig('charset','UTF-8');
 		$data['alias'] = trim(trim($data['alias'])
-			? Coffe_Functions::strToUrl($data['alias'], $charset)
-			: Coffe_Functions::strToUrl($data['title'], $charset));
+			? Coffe_Func::strToUrl($data['alias'], $charset)
+			: Coffe_Func::strToUrl($data['title'], $charset));
 
 		if (!strlen($data['alias'])){
 			throw new Coffe_Exception('There was a mistake in attempt to receive a page alias');

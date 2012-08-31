@@ -303,7 +303,7 @@ class Coffe_User
 	 */
 	protected function getRememberToken()
 	{
-		return md5($this->user[$this->id_column]. md5($this->user[$this->password_column]. Coffe_Functions::getClientIp()));
+		return md5($this->user[$this->id_column]. md5($this->user[$this->password_column]. Coffe_Func::getClientIp()));
 	}
 
 	/**

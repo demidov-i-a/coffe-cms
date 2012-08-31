@@ -13,7 +13,7 @@ try{
 	//инициализация пользователя
 	Coffe::initUser();
 
-	Coffe::setUrlPrefix(Coffe_Functions::getAbsPrefixUrl());
+	Coffe::setUrlPrefix(Coffe_Func::getAbsPrefixUrl());
 
 	//подключаем модули
 	Coffe_ModuleManager::initModules();

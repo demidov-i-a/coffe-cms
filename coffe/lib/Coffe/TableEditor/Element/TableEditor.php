@@ -35,7 +35,7 @@ class Coffe_TableEditor_Element_TableEditor extends Coffe_TableEditor_Element_Ab
 		parent::__construct($name, $config);
 		$this->_form = new Coffe_TableEditor($name);
 		if ($this->_file_path !== null){
-			$file_path = Coffe_Functions::makePath($this->_file_path);
+			$file_path = Coffe_Func::makePath($this->_file_path);
 			if (!file_exists($file_path)){
 				throw new Coffe_Exception('The file not found: ' . htmlspecialchars($file_path));
 			}
@@ -43,7 +43,7 @@ class Coffe_TableEditor_Element_TableEditor extends Coffe_TableEditor_Element_Ab
 			if (!is_array($lv_config)){
 				throw new Coffe_Exception('The file didn\'t return the array: ' . htmlspecialchars($file_path));
 			}
-			Coffe_Functions::parseLangInArray($lv_config);
+			Coffe_Func::parseLangInArray($lv_config);
 			$this->_form->build($lv_config);
 		}
 		elseif (isset($config['tableEditor'])){
