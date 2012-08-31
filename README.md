@@ -8,3 +8,4 @@ New CMS
 I'm new collaborator coffe CMS - whiteskull
 
 Language: PHP
+DB: Mysql
